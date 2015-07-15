@@ -1,1 +1,0 @@
-alias cls="clear"
