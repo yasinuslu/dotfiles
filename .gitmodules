@@ -1,0 +1,9 @@
+[submodule "modules/antigen"]
+	path = modules/antigen
+	url = https://github.com/zsh-users/antigen
+[submodule "modules/vimrc"]
+	path = modules/vimrc
+	url = https://github.com/amix/vimrc.git
+[submodule "modules/tmux"]
+	path = modules/tmux
+	url = https://github.com/tony/tmux-config.git
