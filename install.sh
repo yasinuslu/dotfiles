@@ -21,3 +21,6 @@ mv ~/.tmux ~/.tmux_old_nepjua
 mv ~/.tmux.conf ~/.tmux.conf_old_nepjua
 ln -s `pwd`/modules/tmux ~/.tmux
 ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
+
+# install powerline fonts
+./modules/powerline-fonts/install.sh
