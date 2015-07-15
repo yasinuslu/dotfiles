@@ -24,3 +24,8 @@ ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
 
 # install powerline fonts
 ./modules/powerline-fonts/install.sh
+
+# warning
+echo ""
+echo "Current theme is agnoster and you need to configure powerline fonts to see characters properly."
+echo "see: https://github.com/powerline/fonts "
