@@ -4,6 +4,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
   git
   zsh-users/zsh-syntax-highlighting
+  https://github.com/tarruda/zsh-autosuggestions.git
 EOBUNDLES
 
 # Load the theme.
