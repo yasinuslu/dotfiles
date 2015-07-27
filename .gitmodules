@@ -10,3 +10,6 @@
 [submodule "modules/powerline-fonts"]
 	path = modules/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "modules/nvm"]
+	path = modules/nvm
+	url = https://github.com/creationix/nvm.git

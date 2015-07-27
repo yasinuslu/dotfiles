@@ -7,6 +7,8 @@ antigen bundles <<EOBUNDLES
   https://github.com/tarruda/zsh-autosuggestions.git
 EOBUNDLES
 
+source ~/.nvm/nvm.sh
+
 # Load the theme.
 antigen theme agnoster
 
