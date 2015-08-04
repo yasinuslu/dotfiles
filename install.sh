@@ -16,8 +16,8 @@ mv ~/.nvm ~/.nvm_old_nepjua 2>/dev/null
 ln -s `pwd`/modules/nvm ~/.nvm 2>/dev/null
 # install stable node.js and make it default
 source ~/.nvm/nvm.sh
-nvm install stable
-nvm alias default stable
+nvm install iojs
+nvm alias default iojs
 
 # install vimrc
 mv ~/.vim_runtime ~/.vim_runtime_old_nepjua 2>/dev/null
