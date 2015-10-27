@@ -32,7 +32,7 @@ ln -s `pwd`/modules/nvm ~/.nvm 2>/dev/null
 . ~/.nvm/nvm.sh
 nvm install stable
 nvm alias default stable
-npm config set loglevel info
+npm config set loglevel http
 
 # warning
 echo ""
