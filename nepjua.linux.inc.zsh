@@ -8,4 +8,4 @@ export PATH="$PATH:$HOME/.composer/vendor/bin/";
 
 alias o='xdg-open';
 alias startvpn='systemctl start openvpn@nepjua-arch';
-alias stopvpn='systemctl start openvpn@nepjua-arch';
+alias stopvpn='systemctl stop openvpn@nepjua-arch';
