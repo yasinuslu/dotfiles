@@ -8,7 +8,8 @@ antigen bundles <<EOBUNDLES
   Tarrasch/zsh-autoenv
 EOBUNDLES
 
-source ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh 2>/dev/null
+nvm use --delete-prefix default --silent
 
 # Load the theme.
 antigen theme agnoster
