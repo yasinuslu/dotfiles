@@ -8,6 +8,7 @@ antigen bundles <<EOBUNDLES
   Tarrasch/zsh-autoenv
 EOBUNDLES
 
+export NVM_DIR=$(readlink -f "$HOME/.nvm")
 source ~/.nvm/nvm.sh
 
 # Load the theme.
