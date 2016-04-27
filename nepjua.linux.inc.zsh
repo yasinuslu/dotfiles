@@ -4,7 +4,7 @@ alias ynci='yaourt -S --noconfirm'
 
 export PATH="$PATH:$HOME/.meteor/"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools/"
-export PATH="$PATH:$HOME/.composer/vendor/bin/";
+export PATH="$PATH:$HOME/.config/composer/vendor/bin/";
 
 alias o='xdg-open';
 alias startvpn='systemctl start openvpn@nepjua-arch';

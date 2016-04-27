@@ -6,7 +6,7 @@
 	url = https://github.com/amix/vimrc.git
 [submodule "modules/tmux"]
 	path = modules/tmux
-	url = https://github.com/yasinuslu/tmux-config.git
+	url = https://github.com/tony/tmux-config.git
 [submodule "modules/powerline-fonts"]
 	path = modules/powerline-fonts
 	url = https://github.com/powerline/fonts.git
