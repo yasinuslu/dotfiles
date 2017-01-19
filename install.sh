@@ -19,9 +19,6 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh 2>/dev/null
 
 `pwd`/install/tmux.sh
 
-# install powerline fonts
-./modules/powerline-fonts/install.sh 2>/dev/null
-
 # install nvm
 mv ~/.nvm_old_nepjua 2>/dev/null
 mv ~/.nvm ~/.nvm_old_nepjua 2>/dev/null
