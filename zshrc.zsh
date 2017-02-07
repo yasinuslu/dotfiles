@@ -1,4 +1,4 @@
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
+ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc)
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -33,13 +33,9 @@ if ! zgen saved; then
     zgen prezto autosuggestions
 
     zgen load horosgrisa/autoenv
+    zgen load ${HOME}/.zsh.nepjua.custom
 
 
     # save all to init script
     zgen save
 fi
-
-export CLICOLOR=1
-export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
-
-alias gst="git status"

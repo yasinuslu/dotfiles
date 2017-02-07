@@ -1,7 +1,7 @@
 #!/bin/bash
 git submodule update --init
-ln -s `pwd`/zgen ${HOME}/.zgen
-ln -s `pwd`/zshrc.zsh ${HOME}/.zshrc
-ln -s `pwd`/zshrc.local ${HOME}/.zshrc.local
-ln -s `pwd`/zpreztorc ${HOME}/.zpreztorc
+ln -sf `pwd`/zgen ${HOME}/.zgen
+ln -sf `pwd`/zshrc.zsh ${HOME}/.zshrc
+ln -sf `pwd`/custom ${HOME}/.zsh.nepjua.custom
+ln -sf `pwd`/zpreztorc ${HOME}/.zpreztorc
 touch ~/.autoenv_authorized
