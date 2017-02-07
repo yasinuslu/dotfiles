@@ -32,6 +32,8 @@ if ! zgen saved; then
     zgen prezto fasd
     zgen prezto autosuggestions
 
+    zgen load horosgrisa/autoenv
+
 
     # save all to init script
     zgen save
