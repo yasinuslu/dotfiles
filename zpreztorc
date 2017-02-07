@@ -1,0 +1,1 @@
+zstyle ':prezto:module:terminal' auto-title 'yes'
