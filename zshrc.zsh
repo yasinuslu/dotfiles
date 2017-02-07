@@ -39,3 +39,5 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
