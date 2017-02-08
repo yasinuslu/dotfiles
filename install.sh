@@ -9,6 +9,8 @@ rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+./tmux/install.sh
+
 
 # update symlinks
 # this part is seperated because you might wanna update yout symlinks
