@@ -1,5 +1,7 @@
 # Dotfiles
 
+### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
+
 ## Installation
 I'm currently working on this version in zgen-prezto branch:
 ```
@@ -8,6 +10,7 @@ git checkout zgen-prezto
 ./install.sh
 ```
 
+## Notes
 - You need to type `prefix-I` with capital I to install tmux plugins, more info [here](https://github.com/tmux-plugins/tpm)
 
 
