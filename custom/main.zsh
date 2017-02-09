@@ -6,3 +6,4 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 alias gst="git status"
+alias cls="clear"
