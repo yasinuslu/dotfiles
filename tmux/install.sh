@@ -1,22 +1,21 @@
 #!/bin/bash
 
-rm -rf ~/.tmux
-rm -rf ~/.tmux.conf
-git clone --recursive https://github.com/tony/tmux-config.git ~/.tmux
+# we need to rely on pwd for now
+PROJECT_ROOT=`pwd`
 
-touch ~/tmux-config # tmux install script requires a file named tmux-config
-~/.tmux/install.sh
+rm -rf ${HOME}/.tmux
+rm -rf ${HOME}/.tmux.conf
+rm -rf ${HOME}/.tmux.bak
+git clone --recursive https://github.com/tony/tmux-config.git ${HOME}/.tmux
 
-mkdir ~/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ln -sf ${HOME}/.tmux/.tmux.conf ${HOME}/.tmux.conf
 
-ln -s `pwd`/tmux/tmux.conf ~/.tmux.nepjua.conf
-echo "source-file ~/.tmux.nepjua.conf" >> ~/.tmux.conf
+cd ${HOME}/.tmux/vendor/tmux-mem-cpu-load && cmake . && make && sudo make install
 
-cd ~/.tmux
-git submodule update --init
+mkdir ${HOME}/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
 
+ln -sf ${PROJECT_ROOT}/tmux/tmux.conf ${HOME}/.tmux.nepjua.conf
+echo "source-file ${HOME}/.tmux.nepjua.conf" >> ${HOME}/.tmux.conf
 
-# cd ~/.tmux/vendor/tmux-mem-cpu-load
-# cmake .
-# make
+tmux source-file ${HOME}/.tmux.conf
