@@ -3,10 +3,8 @@
 ### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
 
 ## Installation
-I'm currently working on this version in zgen-prezto branch:
 ```
 git clone https://github.com/yasinuslu/dotfiles.git
-git checkout zgen-prezto
 ./install.sh
 ```
 
@@ -21,3 +19,4 @@ References:
 - https://github.com/tarjoilija/zgen
 - https://github.com/junegunn/fzf
 - https://github.com/amix/vimrc
+- https://github.com/icy/pacapt
