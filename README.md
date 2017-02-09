@@ -20,3 +20,4 @@ References:
 - https://github.com/sorin-ionescu/prezto
 - https://github.com/tarjoilija/zgen
 - https://github.com/junegunn/fzf
+- https://github.com/amix/vimrc
