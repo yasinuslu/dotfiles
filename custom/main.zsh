@@ -12,3 +12,16 @@ export EDITOR="vim"
 
 alias gst="git status"
 alias cls="clear"
+
+export PATH=$(brew --prefix homebrew/php/php71)/bin:${PATH}
+
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+
+eval "$(pyenv init -)"
+
+function gi() {
+  curl -L -s "https://www.gitignore.io/api/$@"
+}
+
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
