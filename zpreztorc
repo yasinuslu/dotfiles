@@ -1,2 +1,0 @@
-zstyle ':prezto:module:terminal' auto-title 'yes'
-zstyle ':prezto:module:utility:ls' color 'yes'

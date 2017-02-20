@@ -1,21 +1,15 @@
 #!/bin/bash
 
-mkdir -p ${HOME}/.bin
-wget -O ${HOME}/.bin/pacapt \
-https://github.com/icy/pacapt/raw/ng/pacapt
-chmod 755 ${HOME}/.bin/pacapt
+curl -Lo ${HOME}/.local/bin/pacapt --create-dirs https://github.com/icy/pacapt/raw/ng/pacapt
+chmod 755 ${HOME}/.local/bin/pacapt
 
-${HOME}/.bin/pacapt -S ag
+${HOME}/.bin/pacapt -S ag fish cmake
 
-# install zgen
-rm -rf ${HOME}/.zgen
-git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
-
-./scripts/install_fzf.sh
-./tmux/install.sh
-./vim/install.sh
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+./scripts/install.sh
+# ./tmux/install.sh
+# ./vim/install.sh
 
 # update symlinks
 # this part is seperated because you might wanna update yout symlinks
 # without reinstalling modules
-./link.sh
