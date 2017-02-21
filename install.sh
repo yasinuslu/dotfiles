@@ -6,6 +6,9 @@ chmod 755 $PACAPT
 
 $PACAPT -S ag fish cmake
 
+# install n
+curl -L https://git.io/n-install | bash
+
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 ./scripts/install_fish.sh
 ./tmux/install.sh
