@@ -4,3 +4,9 @@
 # * $package       package name
 # * $path          package path
 # * $dependencies  package dependencies
+# 
+
+set path $HOME/.config/fisherman/nepjua
+
+source $path/aliases/git.fish
+source $path/aliases/nepjua.fish

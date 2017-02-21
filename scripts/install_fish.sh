@@ -21,5 +21,5 @@ curl -Lo ${HOME}/.config/fish/functions/fisher.fish --create-dirs https://git.io
 ln -sf ${PROJECT_ROOT}/fishfile ${HOME}/.config/fish/fishfile
 
 fish -c "fisher"
-fish -c "fisher ${PROJECT_ROOT}/fish-plugin"
+fish -c "fisher ${PROJECT_ROOT}/fish-plugin-nepjua"
 fish -c "omf install"
