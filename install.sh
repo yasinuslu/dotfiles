@@ -4,7 +4,7 @@ export PACAPT=${HOME}/.local/bin/pacapt
 curl -Lo $PACAPT --create-dirs https://github.com/icy/pacapt/raw/ng/pacapt
 chmod 755 $PACAPT
 
-$PACAPT -S ag fish cmake
+$PACAPT -S tmux vim ag fish cmake
 
 # install n
 curl -L https://git.io/n-install | bash
