@@ -7,6 +7,7 @@ rm -rf ${HOME}/.config/fisherman
 rm -rf ${HOME}/.config/omf
 rm -rf ${HOME}/.local/share/omf
 rm -rf /tmp/install_omf.fish
+rm -rf ~/.fzf*
 
 
 # install oh-my-fish
@@ -23,3 +24,4 @@ ln -sf ${PROJECT_ROOT}/fishfile ${HOME}/.config/fish/fishfile
 fish -c "fisher"
 fish -c "fisher ${PROJECT_ROOT}/fish-plugin-nepjua"
 fish -c "omf install"
+fish -c "__fzf_install --bin"
