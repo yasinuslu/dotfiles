@@ -11,4 +11,4 @@ set path $HOME/.config/fisherman/nepjua
 source $path/aliases/git.fish
 source $path/aliases/nepjua.fish
 
-set PATH $PATH $HOME/n/bin
+set PATH $HOME/n/bin $PATH
