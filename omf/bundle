@@ -1,3 +1,4 @@
 package gi
+package node-binpath
 package osx
 theme bobthefish
