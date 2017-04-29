@@ -18,7 +18,8 @@ rm -rf ${HOME}/.config/omf
 ln -sf ${PROJECT_ROOT}/omf ${HOME}/.config/omf
 
 #install fisherman
-curl -Lo ${HOME}/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+FISHER_URL=https://raw.githubusercontent.com/fisherman/fisherman/master/fisher.fish
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs $FISHER_URL
 ln -sf ${PROJECT_ROOT}/fishfile ${HOME}/.config/fish/fishfile
 
 fish -c "fisher"
