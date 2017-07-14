@@ -6,9 +6,17 @@
 # * $dependencies  package dependencies
 # 
 
-set path $HOME/.config/fisherman/nepjua
+set NEPJUA_PATH $HOME/.config/fisherman/nepjua
 
-source $path/aliases/git.fish
-source $path/aliases/nepjua.fish
+source $NEPJUA_PATH/aliases/git.fish
+source $NEPJUA_PATH/aliases/nepjua.fish
 
-set PATH $HOME/n/bin $PATH
+switch (uname)
+  case Linux
+  case Darwin
+    set ANDROID_HOME $HOME/Library/Android/sdk
+    set PATH $PATH $ANDROID_HOME/tools
+    set PATH $PATH $ANDROID_HOME/platform-tools
+  case FreeBSD NetBSD DragonFly
+  case '*'
+end
