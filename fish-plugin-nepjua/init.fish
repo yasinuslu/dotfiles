@@ -22,13 +22,17 @@ if [ "$IS_WSL" != "0" ]
 else
   switch (uname)
     case Linux
-      set ANDROID_HOME $HOME/Android/Sdk
-      set PATH $PATH $ANDROID_HOME/tools
-      set PATH $PATH $ANDROID_HOME/platform-tools
+      if test -d $HOME/Android/Sdk
+        set ANDROID_HOME $HOME/Android/Sdk
+        set PATH $PATH $ANDROID_HOME/tools
+        set PATH $PATH $ANDROID_HOME/platform-tools
+      end
     case Darwin
-      set ANDROID_HOME $HOME/Library/Android/sdk
-      set PATH $PATH $ANDROID_HOME/tools
-      set PATH $PATH $ANDROID_HOME/platform-tools
+      if test -d $HOME/Library/Android/sdk
+        set ANDROID_HOME $HOME/Library/Android/sdk
+        set PATH $PATH $ANDROID_HOME/tools
+        set PATH $PATH $ANDROID_HOME/platform-tools
+      end
     case FreeBSD NetBSD DragonFly
     case '*'
   end
