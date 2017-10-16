@@ -1,1 +1,0 @@
-export IS_WSL=true
