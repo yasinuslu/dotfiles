@@ -6,7 +6,7 @@
 # * $dependencies  package dependencies
 # 
 
-set NEPJUA_PATH $HOME/.config/fisherman/nepjua
+set -x NEPJUA_PATH $HOME/.config/fisherman/nepjua
 set -x EDITOR vim
 
 source $NEPJUA_PATH/aliases/git.fish
