@@ -26,6 +26,7 @@ else
         set ANDROID_HOME $HOME/Android/Sdk
         set PATH $PATH $ANDROID_HOME/tools
         set PATH $PATH $ANDROID_HOME/platform-tools
+        set PATH $PATH $HOME/.local/bin
       end
     case Darwin
       if test -d $HOME/Library/Android/sdk
