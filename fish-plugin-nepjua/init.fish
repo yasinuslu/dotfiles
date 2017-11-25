@@ -23,16 +23,17 @@ else
   switch (uname)
     case Linux
       if test -d $HOME/Android/Sdk
-        set ANDROID_HOME $HOME/Android/Sdk
-        set PATH $PATH $ANDROID_HOME/tools
-        set PATH $PATH $ANDROID_HOME/platform-tools
-        set PATH $PATH $HOME/.local/bin
+        set -x ANDROID_HOME $HOME/Android/Sdk
+        set -x PATH $ANDROID_HOME/tools $PATH
+        set -x PATH $ANDROID_HOME/platform-tools $PATH 
       end
+      
+      set -x PATH $HOME/.local/bin $PATH
     case Darwin
       if test -d $HOME/Library/Android/sdk
-        set ANDROID_HOME $HOME/Library/Android/sdk
-        set PATH $PATH $ANDROID_HOME/tools
-        set PATH $PATH $ANDROID_HOME/platform-tools
+        set -x ANDROID_HOME $HOME/Library/Android/sdk
+        set -x PATH $PATH $ANDROID_HOME/tools
+        set -x PATH $PATH $ANDROID_HOME/platform-tools
       end
     case FreeBSD NetBSD DragonFly
     case '*'
