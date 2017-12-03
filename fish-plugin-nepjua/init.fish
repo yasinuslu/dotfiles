@@ -16,6 +16,9 @@ set -x LS_COLORS "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null | wc -l)
 
+set -x PATH $HOME/.config/fnm/bin $PATH
+set -x TERM screen-256color
+
 if [ "$IS_WSL" != "0" ]
   set -x DOCKER_HOST tcp://localhost:2375
   alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'
@@ -29,6 +32,7 @@ else
       end
       
       set -x PATH $HOME/.local/bin $PATH
+      set -x LIBVIRT_DEFAULT_URI "qemu:///system"
     case Darwin
       if test -d $HOME/Library/Android/sdk
         set -x ANDROID_HOME $HOME/Library/Android/sdk
