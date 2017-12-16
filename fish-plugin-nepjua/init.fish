@@ -19,6 +19,8 @@ set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null | wc -l)
 set -x PATH $HOME/.config/fnm/bin $PATH
 set -x TERM screen-256color
 
+set -g theme_display_user yes
+
 if [ "$IS_WSL" != "0" ]
   set -x DOCKER_HOST tcp://localhost:2375
   alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'

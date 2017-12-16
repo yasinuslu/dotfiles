@@ -1,7 +1,10 @@
 #!/bin/bash
 
 PROJECT_ROOT=`pwd`
-source ${PROJECT_ROOT}/fish-plugin-nepjua/config.sh
+if [[ -f ${PROJECT_ROOT}/fish-plugin-nepjua/config.sh ]]
+then
+  . ${PROJECT_ROOT}/fish-plugin-nepjua/config.sh
+fi
 
 rm -rf ${HOME}/.config/fish
 rm -rf ${HOME}/.config/fisherman
