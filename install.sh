@@ -11,7 +11,7 @@ then
   PACAPT_COMMAND="${PACAPT_PREFIX:-""} $PACAPT"
 fi
 
-$PACAPT_COMMAND -S tmux vim the_silver_searcher fish cmake
+$PACAPT_COMMAND -S tmux vim fish cmake
 
 ./scripts/install_fish.sh
 ./tmux/install.sh
