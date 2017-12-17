@@ -17,7 +17,7 @@ set -x LS_COLORS "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null | wc -l)
 
 set -x PATH $HOME/.config/fnm/bin $PATH
-set -x TERM screen-256color
+set -x TERM xterm-256color
 
 set -g theme_display_user yes
 
