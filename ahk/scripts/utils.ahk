@@ -1,7 +1,7 @@
 WinVisible(WinTitle)
 {
-	WinGet, Style, Style, %WinTitle% 
-	Transform, Result, BitAnd, %Style%, 0x10000000 ; 0x10000000 is WS_VISIBLE. 
+	WinGet, Style, Style, %WinTitle%
+	Transform, Result, BitAnd, %Style%, 0x10000000 ; 0x10000000 is WS_VISIBLE.
 	if Result <> 0 ;Window is Visible
 		Return 1
 	Else  ;Window is Hidden
@@ -10,7 +10,7 @@ WinVisible(WinTitle)
 
 activeMonitorInfo( ByRef X, ByRef Y, ByRef Width,  ByRef  Height  )
 { ; retrieves the size of the monitor, the mouse is on
-	
+
 	CoordMode, Mouse, Screen
 	MouseGetPos, mouseX , mouseY
 	SysGet, monCount, MonitorCount
@@ -26,4 +26,10 @@ activeMonitorInfo( ByRef X, ByRef Y, ByRef Width,  ByRef  Height  )
 				return
 			}
     }
+}
+
+activateWindowUnderMouse()
+{
+	MouseGetPos,,, OutputVarWin
+	WinActivate, ahk_id %OutputVarWin%
 }
