@@ -3,13 +3,13 @@
 DetectHiddenWindows, On
 HyperWindow = ahk_exe Hyper.exe
 HyperTitle = Hyper
-HyperExe = "C:\Users\Alperen\AppData\Local\hyper\Hyper.exe"
+HyperExe = "%USERPROFILE%\AppData\Local\hyper\Hyper.exe"
 
-ToggleHyper() 
+ToggleHyper()
 {
 	global HyperWindow
 	global HyperTitle
-	
+
 	if WinExist(HyperWindow)
 	{
 		if WinVisible(HyperTitle)
@@ -21,13 +21,12 @@ ToggleHyper()
 			ShowHyper()
 		}
 	}
-	else 
+	else
 	{
 		RunHyper()
 		ShowHyper()
-		HideFromAltTab()
+		ModifyHyperWindow()
 	}
-
 }
 
 RunHyper()
@@ -42,6 +41,7 @@ RunHyper()
 ShowHyper()
 {
 	global HyperWindow
+
 	MoveHyper()
 	WinShow, %HyperWindow%
 	WinActivate, %HyperWindow%
@@ -50,24 +50,32 @@ ShowHyper()
 HideHyper()
 {
 	global HyperWindow
+
 	WinHide, %HyperWindow%
+	activateWindowUnderMouse()
 }
 
 MoveHyper()
 {
 	global HyperWindow
+
 	activeMonitorInfo(X, Y, Width, Height)
 	WinMove, %HyperWindow%,, %Y%, %X%, %Width%, (Height*0.46)
 }
 
-HideFromAltTab()
+ModifyHyperWindow()
 {
 	global HyperTitle
+
 	Winget, id, id, %HyperTitle%
-	WinSet, ExStyle, ^0x80, ahk_id %id%  ; Toggle the WS_EX_TOOLWINDOW attribute, which removes/adds the window from the alt-tab list.
+	WinSet, ExStyle, ^0x80, ahk_id %id%
 	Winset, AlwaysOnTop, On, ahk_id %id%
-	Winset, Trans, 235, ahk_id %id%
-	
+
+	if % substr(A_OSVERSION, 1, 2) = 10
+	{
+		Winset, Trans, 235, ahk_id %id%
+	}
+
 	OutputDebug, "id" %id%
 }
 
