@@ -1,5 +1,3 @@
-#Include utils.ahk
-
 DetectHiddenWindows, On
 HyperWindow = ahk_exe Hyper.exe
 HyperTitle = Hyper
