@@ -1,0 +1,1 @@
+alias dcomposer='docker run --rm -it --tty -v $PWD:/app composer'
