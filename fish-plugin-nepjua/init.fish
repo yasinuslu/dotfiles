@@ -4,7 +4,7 @@
 # * $package       package name
 # * $path          package path
 # * $dependencies  package dependencies
-# 
+#
 
 set -x NEPJUA_PATH $HOME/.config/fisherman/nepjua
 set -x EDITOR vim
@@ -27,6 +27,7 @@ if [ "$IS_WSL" != "0" ]
   set fish_greeting ""
   set -x DOCKER_HOST tcp://localhost:2375
   alias subl='"/c/Program Files/Sublime Text 3/subl.exe"'
+  export BROWSER='/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
   cd
   umask 022
   if [ (df -h | grep ' /c$' | wc -l) = "0" ]
@@ -43,9 +44,9 @@ else
       if test -d $HOME/Android/Sdk
         set -x ANDROID_HOME $HOME/Android/Sdk
         set -x PATH $ANDROID_HOME/tools $PATH
-        set -x PATH $ANDROID_HOME/platform-tools $PATH 
+        set -x PATH $ANDROID_HOME/platform-tools $PATH
       end
-      
+
       set -x PATH $HOME/.local/bin $PATH
       set -x LIBVIRT_DEFAULT_URI "qemu:///system"
     case Darwin
