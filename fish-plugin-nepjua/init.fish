@@ -19,6 +19,7 @@ set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null \
   | wc -l | sed -e 's/^[ \t]*//' -e 's/[ \t]*$//')
 
 set -x PATH $HOME/.config/fnm/bin $PATH
+set -x PATH $HOME/.yarn/bin $PATH
 set -x TERM xterm-256color
 
 set -g theme_display_user yes
