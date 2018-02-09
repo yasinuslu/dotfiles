@@ -11,3 +11,5 @@ function dartisan-serve
         php:7-cli-alpine \
         php artisan serve --host=0.0.0.0 --port=8000
 end
+alias doc='docker-compose'
+alias docp='docker-compose -f docker-compose.yml -f docker-compose-prod.yml'
