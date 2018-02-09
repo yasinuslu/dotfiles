@@ -6,6 +6,7 @@
 # * $dependencies  package dependencies
 #
 
+set fish_greeting ""
 set -x NEPJUA_PATH $HOME/.config/fisherman/nepjua
 set -x EDITOR vim
 
