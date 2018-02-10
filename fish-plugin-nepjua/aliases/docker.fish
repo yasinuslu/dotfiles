@@ -22,6 +22,7 @@ function dmeteor
     set PORT 3000
     set NAME "app"
     set i 0
+    set params
     getopts $argv | while read -l key value
         switch $key
             case dport
@@ -32,9 +33,7 @@ function dmeteor
                 set i (math $i + 1)
         end
     end
-    if test $i -eq (count $argv)
-        set params
-    else
+    if test $i -ne (count $argv)
         set params $argv[(math $i + 1)..-1]
     end
     docker run -it --rm --name=$NAME -v $PWD:/app -p $PORT:3000 golden/meteor-dev $params
