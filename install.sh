@@ -8,6 +8,11 @@ PACAPT_COMMAND="sudo ${PACAPT}"
 
 $PACAPT_COMMAND -S tmux vim fish cmake
 
+
 ./scripts/install_fish.sh
 ./tmux/install.sh
 ./vim/install.sh
+
+./scripts/install_fzf.sh
+
+./scripts/ensure.sh
