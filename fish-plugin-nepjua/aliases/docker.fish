@@ -12,7 +12,7 @@ function dartisan-serve
         php artisan serve --host=0.0.0.0 --port=8000
 end
 alias doc='docker-compose'
-alias docp='docker-compose -f docker-compose.yml -f docker-compose-prod.yml'
+alias docp='docker-compose -f docker-compose.yml -f docker-compose.prod.yml'
 
 # dmeteor --dname=app --dport=5000 create app
 # dmeteor --dname=app --dport=5000 npm install
