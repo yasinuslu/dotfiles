@@ -51,6 +51,7 @@ else
       end
 
       set -x PATH $HOME/.local/bin $PATH
+      set -x PATH /var/lib/snapd/snap/bin $PATH
       set -x LIBVIRT_DEFAULT_URI "qemu:///system"
     case Darwin
       if test -d $HOME/Library/Android/sdk
