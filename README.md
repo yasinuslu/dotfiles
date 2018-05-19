@@ -16,8 +16,6 @@ cd dotfiles
 References:
 - https://github.com/tony/tmux-config
 - https://github.com/tmux-plugins/tpm
-- https://github.com/sorin-ionescu/prezto
-- https://github.com/tarjoilija/zgen
 - https://github.com/junegunn/fzf
 - https://github.com/amix/vimrc
 - https://github.com/icy/pacapt
