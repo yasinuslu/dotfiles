@@ -25,6 +25,10 @@ FISHER_URL=https://raw.githubusercontent.com/fisherman/fisherman/master/fisher.f
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs $FISHER_URL
 ln -sf ${PROJECT_ROOT}/fishfile ${HOME}/.config/fish/fishfile
 
+# install kubectl completions
+KUBECTL_COMPLETION_URL=https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/kubectl.fish
+curl -Lo ~/.config/fish/completions/kubectl.fish --create-dirs $KUBECTL_COMPLETION_URL
+
 fish -c "fisher"
 fish -c "fisher ${PROJECT_ROOT}/fish-plugin-nepjua"
 fish -c "omf install"
