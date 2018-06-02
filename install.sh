@@ -14,5 +14,6 @@ $PACAPT_COMMAND -S tmux vim fish cmake
 ./vim/install.sh
 
 ./scripts/install_fzf.sh
+./scripts/install_gvm.sh
 
 ./scripts/ensure.sh
