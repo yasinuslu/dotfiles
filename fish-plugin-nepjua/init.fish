@@ -44,6 +44,10 @@ if [ "$IS_WSL" != "0" ]
 else
   switch (uname)
     case Linux
+      if test -d $HOME/.gvm
+        bass source $HOME/.gvm/scripts/gvm
+      end
+      
       if test -d $HOME/Android/Sdk
         set -x ANDROID_HOME $HOME/Android/Sdk
         set -x PATH $ANDROID_HOME/tools $PATH
