@@ -5,7 +5,7 @@ function installGvm() {
   
   source $HOME/.gvm/scripts/gvm
   gvm install go1.10.2 -B
-  gvm use go1.10.2
+  gvm use go1.10.2 --default
 }
 
 installGvm
