@@ -6,5 +6,6 @@ fisherman/fzf
 fisherman/get
 fisherman/get_file_age
 fisherman/getopts
+maman/plugin-gvm
 fisherman/last_job_id
 fisherman/menu
