@@ -42,8 +42,9 @@ if [ "$IS_WSL" != "0" ]
     sudo mount --bind /mnt/d /d
   end
 else
-  if test -d $HOME/.gvm
-    bass source $HOME/.gvm/scripts/gvm
+  if test -d $HOME/go
+    set -x GOPATH $HOME/go
+    set -x PATH $GOPATH/bin $PATH
   end
   
   switch (uname)

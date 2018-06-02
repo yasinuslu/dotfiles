@@ -6,7 +6,7 @@ chmod 755 $PACAPT
 
 PACAPT_COMMAND="sudo ${PACAPT}"
 
-$PACAPT_COMMAND -S tmux vim fish cmake bison
+$PACAPT_COMMAND -S tmux vim fish cmake
 
 
 ./scripts/install_fish.sh
@@ -14,6 +14,5 @@ $PACAPT_COMMAND -S tmux vim fish cmake bison
 ./vim/install.sh
 
 ./scripts/install_fzf.sh
-./scripts/install_gvm.sh
 
 ./scripts/ensure.sh
