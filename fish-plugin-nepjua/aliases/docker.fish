@@ -13,6 +13,7 @@ function dartisan-serve
 end
 alias doc='docker-compose'
 alias docp='docker-compose -f docker-compose.yml -f docker-compose.prod.yml'
+alias docd='docker-compose -f docker-compose.yml -f docker-compose.dev.yml'
 
 # dmeteor --dname=app --dport=5000 create app
 # dmeteor --dname=app --dport=5000 npm install
