@@ -26,6 +26,10 @@ set -x TERM xterm-256color
 
 set -g theme_display_user yes
 
+if type -q code
+  set -x EDITOR "code --wait"
+end
+
 if [ "$IS_WSL" != "0" ]
   set fish_greeting ""
   set -x DOCKER_HOST tcp://localhost:2375
