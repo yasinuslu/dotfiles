@@ -1,0 +1,1 @@
+dconf write /apps/guake/style/font/palette-name "'Argonaut'" 2>/dev/null

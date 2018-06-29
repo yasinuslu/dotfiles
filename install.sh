@@ -16,3 +16,11 @@ $PACAPT_COMMAND -S tmux vim fish cmake
 ./scripts/install_fzf.sh
 
 ./scripts/ensure.sh
+
+read -p "Are you cool with what comes next (y/N) ? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Ok, then applying extra special configurations plus ultra"
+    ./scripts/config.sh
+fi
