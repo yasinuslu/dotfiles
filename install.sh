@@ -15,6 +15,7 @@ $PACAPT_COMMAND -S tmux vim fish cmake
 
 ./scripts/install_fzf.sh
 ./scripts/install_sdkman.sh
+./scripts/install_docker_tools.sh
 
 ./scripts/ensure.sh
 
