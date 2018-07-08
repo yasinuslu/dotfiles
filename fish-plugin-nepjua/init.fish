@@ -23,6 +23,7 @@ set -x PATH $HOME/.config/fnm/bin $PATH
 set -x PATH $HOME/.yarn/bin $PATH
 set -x PATH $NEPJUA_PATH/../bin $PATH
 set -x TERM xterm-256color
+set -x BYOBU_BACKEND tmux
 
 set -g theme_display_user yes
 
