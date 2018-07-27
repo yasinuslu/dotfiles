@@ -14,7 +14,7 @@ rm -rf /tmp/install_omf.fish
 
 
 # install oh-my-fish
-curl -L http://get.oh-my.fish > /tmp/install_omf.fish
+curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/install_omf.fish
 chmod +x /tmp/install_omf.fish
 /tmp/install_omf.fish --path=${HOME}/.local/share/omf --config=${HOME}/.config/omf --noninteractive --yes
 rm -rf ${HOME}/.config/omf
