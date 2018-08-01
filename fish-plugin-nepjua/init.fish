@@ -27,6 +27,7 @@ set -x TERM xterm-256color
 set -x BYOBU_BACKEND tmux
 
 set -g theme_display_user yes
+set -g theme_color_scheme terminal-dark
 
 if type -q code
   set -x EDITOR "code --wait"
