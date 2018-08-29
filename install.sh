@@ -1,28 +1,15 @@
 #!/bin/bash
 
-export PACAPT=${HOME}/.local/bin/pacapt
-curl -Lo $PACAPT --create-dirs https://github.com/icy/pacapt/raw/ng/pacapt
-chmod 755 $PACAPT
+DF_PROJECT_PATH=""
+DF_SRC_PATH=""
 
-PACAPT_COMMAND="sudo ${PACAPT}"
+df_init_paths() {
+    DF_PROJECT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+    DF_SRC_PATH="${DF_PROJECT_PATH}/src"
+    DF_CACHE_PATH="${DF_PROJECT_PATH}/.cache"
+}
 
-$PACAPT_COMMAND -S tmux vim fish cmake
+df_init_paths
 
-
-./scripts/install_fish.sh
-./tmux/install.sh
-./vim/install.sh
-
-./scripts/install_fzf.sh
-./scripts/install_sdkman.sh
-./scripts/install_docker_tools.sh
-
-./scripts/ensure.sh
-
-read -p "Are you cool with what comes next (y/N) ? " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "Ok, then applying extra special configurations plus ultra"
-    ./scripts/config.sh
-fi
+source "${DF_SRC_PATH}/install.sh"
+df_install
