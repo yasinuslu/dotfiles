@@ -16,6 +16,14 @@ cd dotfiles
 ./install.sh
 ```
 
+## Usage
+We use fish, just run `fish`
+
+Or if you prefer to make it your default shell:
+```sh
+chsh -s $(which fish)
+```
+
 References:
 - https://github.com/gpakosz/.tmux
 - https://github.com/junegunn/fzf
