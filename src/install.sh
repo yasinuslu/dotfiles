@@ -1,4 +1,4 @@
-df_install() {
+df_require() {
   source "${DF_SRC_PATH}/platform.sh"
   source "${DF_SRC_PATH}/install_deps.sh"
   source "${DF_SRC_PATH}/install_fish.sh"
@@ -9,7 +9,9 @@ df_install() {
   source "${DF_SRC_PATH}/install_sdkman.sh"
   source "${DF_SRC_PATH}/config.sh"
   source "${DF_SRC_PATH}/ensure.sh"
+}
 
+df_install() {
   df_get_platform
 
   echo "Installing for ${DF_PLATFORM}"

@@ -12,4 +12,5 @@ df_init_paths() {
 df_init_paths
 
 source "${DF_SRC_PATH}/install.sh"
+df_require
 df_install
