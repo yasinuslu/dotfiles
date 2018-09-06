@@ -8,8 +8,8 @@ df_install_deps() {
 
   if [[ $DF_PLATFORM == 'Mac' ]]
   then
-    $pacapt -S tmux vim fish
+    $pacapt --noconfirm -S tmux vim fish
   else
-    sudo $pacapt -S tmux vim fish
+    sudo $pacapt --noconfirm -S tmux vim fish
   fi
 }
