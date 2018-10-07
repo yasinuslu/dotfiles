@@ -17,7 +17,7 @@ df_fish_install_omf() {
 
 df_fish_install_fisherman() {
   #install fisherman
-  FISHER_URL=https://raw.githubusercontent.com/fisherman/fisherman/master/fisher.fish
+  FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/2.13.0/fisher.fish
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs $FISHER_URL
   ln -sf ${DF_PROJECT_PATH}/fishfile ${HOME}/.config/fish/fishfile
 }
