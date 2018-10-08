@@ -11,4 +11,5 @@ fisherman/menu
 oh-my-fish/plugin-gi
 oh-my-fish/plugin-node-binpath
 oh-my-fish/plugin-osx
-matchai/spacefish
+oh-my-fish/theme-bobthefish
+jhillyerd/plugin-git
