@@ -4,5 +4,5 @@ function getPodName() {
   kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $1
 }
 
-# Attach to a pod's default container filtered with $!
+# Attach to a pod's default container filtered with $1
 kubectl attach -it $(getPodName $1)

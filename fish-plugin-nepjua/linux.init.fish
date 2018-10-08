@@ -1,13 +1,9 @@
-source $NEPJUA_PATH/aliases/linux.fish
-
-alias o="xdg-open"
-
-if not type -q subl
-  if type -q subl3
-    alias subl="subl3"
-  end
+if test -d $HOME/Android/Sdk
+  set -x ANDROID_HOME $HOME/Android/Sdk
+  set -x PATH $ANDROID_HOME/tools $PATH
+  set -x PATH $ANDROID_HOME/platform-tools $PATH
 end
 
-set ANDROID_HOME $HOME/Android/Sdk
-set PATH $PATH $ANDROID_HOME/tools
-set PATH $PATH $ANDROID_HOME/platform-tools
+set -x PATH $HOME/.local/bin $PATH
+set -x PATH /snap/bin $PATH
+set -x LIBVIRT_DEFAULT_URI "qemu:///system"
