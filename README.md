@@ -19,10 +19,19 @@ cd dotfiles
 ## Usage
 We use fish, just run `fish`
 
-Or if you prefer to make it your default shell:
-```sh
-chsh -s $(which fish)
-```
+### Make fish your default shell
+
+- In POSIX compliant shells like `bash` or `zsh`
+  
+  ```sh
+  chsh -s $(which fish)
+  ```
+
+- In `fish`
+  
+  ```sh
+  chsh -s (which fish)
+  ```
 
 References:
 - https://github.com/gpakosz/.tmux
