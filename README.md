@@ -27,5 +27,6 @@ chsh -s $(which fish)
 References:
 - https://github.com/gpakosz/.tmux
 - https://github.com/junegunn/fzf
-- https://github.com/amix/vimrc
+- https://github.com/SpaceVim/SpaceVim
 - https://github.com/icy/pacapt
+- https://github.com/asdf-vm/asdf
