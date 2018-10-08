@@ -7,7 +7,7 @@
 #
 
 set fish_greeting ""
-set -x NEPJUA_PATH $HOME/.config/fisherman/nepjua
+set -x NEPJUA_PATH $HOME/.config/fisher/local/$USER/fish-plugin-nepjua
 set -x EDITOR vim
 
 source $NEPJUA_PATH/aliases/git.fish
