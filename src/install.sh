@@ -4,7 +4,7 @@ df_require() {
   source "${DF_SRC_PATH}/install_fish.sh"
   source "${DF_SRC_PATH}/install_fzf.sh"
   source "${DF_SRC_PATH}/tmux/install.sh"
-  source "${DF_SRC_PATH}/vim/install.sh"
+  source "${DF_SRC_PATH}/install_vim.sh"
   source "${DF_SRC_PATH}/install_docker_tools.sh"
   source "${DF_SRC_PATH}/install_sdkman.sh"
   source "${DF_SRC_PATH}/config.sh"
