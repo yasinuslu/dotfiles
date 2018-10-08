@@ -30,55 +30,16 @@ set -x BYOBU_BACKEND tmux
 set -g theme_display_user yes
 set -g theme_color_scheme terminal-dark
 
-if type -q code
-  set -x EDITOR "code --wait"
+if [ "$IS_WSL" != "0" ]
+  # if we're in WSL
+  source $NEPJUA_PATH/wsl.init.fish
+else
+  # we're in a non-wsl unix environment
+  source $NEPJUA_PATH/unix.init.fish
 end
 
-if [ "$IS_WSL" != "0" ]
-  set fish_greeting ""
-  set -x DOCKER_HOST tcp://localhost:2375
-  alias subl='"/c/Program Files/Sublime Text 3/subl.exe"'
-  export BROWSER='/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
-  cd
-  umask 022
-  if [ (df -h | grep ' /c$' | wc -l) = "0" ]
-    mkdir -p /c
-    sudo mount --bind /mnt/c /c
-  end
-  if [ (df -h | grep ' /d$' | wc -l) = "0" ]
-    mkdir -p /d
-    sudo mount --bind /mnt/d /d
-  end
-else
-  if test -d $HOME/go
-    set -x GOPATH $HOME/go
-    set -x PATH $GOPATH/bin $PATH
-  end
-  
-  switch (uname)
-    case Linux
-      if test -d $HOME/Android/Sdk
-        set -x ANDROID_HOME $HOME/Android/Sdk
-        set -x PATH $ANDROID_HOME/tools $PATH
-        set -x PATH $ANDROID_HOME/platform-tools $PATH
-      end
-
-      set -x PATH $HOME/.local/bin $PATH
-      set -x PATH /snap/bin $PATH
-      set -x LIBVIRT_DEFAULT_URI "qemu:///system"
-    case Darwin
-      if test -d $HOME/Library/Android/sdk
-        set -x ANDROID_HOME $HOME/Library/Android/sdk
-        set -x PATH $PATH $ANDROID_HOME/tools
-        set -x PATH $PATH $ANDROID_HOME/platform-tools
-      end
-    case FreeBSD NetBSD DragonFly
-    case '*'
-  end
-
-  if not type -q subl
-    if type -q subl3
-      alias subl="subl3"
-    end
-  end
+if type -q code
+  set -x EDITOR "code --wait"
+else if type -q subl
+  set -x EDITOR "subl --wait"
 end
