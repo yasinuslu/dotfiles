@@ -29,6 +29,7 @@ set -x BYOBU_BACKEND tmux
 
 set -g theme_display_user yes
 set -g theme_color_scheme terminal-dark
+set -g theme_display_ruby no
 
 if [ "$IS_WSL" != "0" ]
   # if we're in WSL
