@@ -19,12 +19,10 @@ df_fish_install_completions() {
 df_fish_install_deps() {
   fish -c "fisher"
   fish -c "fisher add ${DF_PROJECT_PATH}/fish-plugin-nepjua"
-  fish -c "fnm latest"
 }
 
 df_install_fish() {
-  if [[ -f ${DF_PROJECT_PATH}/fish-plugin-nepjua/config.sh ]]
-  then
+  if [[ -f ${DF_PROJECT_PATH}/fish-plugin-nepjua/config.sh ]]; then
     . ${DF_PROJECT_PATH}/fish-plugin-nepjua/config.sh
   fi
 

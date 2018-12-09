@@ -21,8 +21,9 @@ set -x LS_COLORS "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null \
   | wc -l | sed -e 's/^[ \t]*//' -e 's/[ \t]*$//')
 
-set -x PATH $HOME/.config/fnm/bin $PATH
-set -x PATH $HOME/.yarn/bin $PATH
+set -x NODEJS_CHECK_SIGNATURES no
+
+set -x PATH (yarn global bin) $PATH
 set -x PATH $NEPJUA_PATH/../bin $PATH
 set -x TERM xterm-256color
 set -x BYOBU_BACKEND tmux
