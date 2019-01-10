@@ -16,6 +16,7 @@ abbr docp='docker-compose -f docker-compose.yml -f docker-compose.prod.yml'
 abbr docd='docker-compose -f docker-compose.yml -f docker-compose.dev.yml'
 abbr k='kubectl'
 abbr mk='microk8s.kubectl'
+abbr md='microk8s.docker'
 
 # dmeteor --dname=app --dport=5000 create app
 # dmeteor --dname=app --dport=5000 npm install
