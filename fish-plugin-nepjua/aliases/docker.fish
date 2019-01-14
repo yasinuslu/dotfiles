@@ -19,6 +19,7 @@ abbr k='kubectl'
 abbr mk='microk8s.kubectl'
 abbr md='microk8s.docker'
 abbr sk='skaffold'
+abbr df='df -x"squashfs"'
 
 # dmeteor --dname=app --dport=5000 create app
 # dmeteor --dname=app --dport=5000 npm install
