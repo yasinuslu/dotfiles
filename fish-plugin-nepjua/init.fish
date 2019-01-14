@@ -45,3 +45,7 @@ if type -q code
 else if type -q subl
   set -x EDITOR "subl --wait"
 end
+
+# if type -q microk8s.docker
+#   set -x DOCKER_HOST "unix:///var/snap/microk8s/current/docker.sock"
+# end

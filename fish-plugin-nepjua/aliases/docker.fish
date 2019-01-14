@@ -11,12 +11,14 @@ function dartisan-serve
         php:7-cli-alpine \
         php artisan serve --host=0.0.0.0 --port=8000
 end
+abbr d='docker'
 abbr doc='docker-compose'
 abbr docp='docker-compose -f docker-compose.yml -f docker-compose.prod.yml'
 abbr docd='docker-compose -f docker-compose.yml -f docker-compose.dev.yml'
 abbr k='kubectl'
 abbr mk='microk8s.kubectl'
 abbr md='microk8s.docker'
+abbr sk='skaffold'
 
 # dmeteor --dname=app --dport=5000 create app
 # dmeteor --dname=app --dport=5000 npm install
