@@ -32,6 +32,10 @@ set -g theme_display_user yes
 set -g theme_color_scheme terminal-dark
 set -g theme_display_ruby no
 
+if test -d $HOME/.kube
+  set -x KUBECONFIG (echo $HOME/.kube/config* | sed -e "s/\ /:/g")
+end
+
 if [ "$IS_WSL" != "0" ]
   # if we're in WSL
   source $NEPJUA_PATH/wsl.init.fish
