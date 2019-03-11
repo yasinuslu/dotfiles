@@ -28,6 +28,10 @@ df_install_asdf() {
 
   export NODEJS_CHECK_SIGNATURES=no
   df_install_asdf_plugin_version nodejs 10.14.1
+  if [ `id -u` -eq "0" ]; then
+    npm config set user 0;
+    npm config set unsafe-perm true;
+  fi
   npm i -g yarn
   echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${bashrc}
 
