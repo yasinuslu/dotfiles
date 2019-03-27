@@ -14,6 +14,9 @@ source $HOME/.asdf/asdf.fish
 
 source $NEPJUA_PATH/aliases/docker.fish
 
+alias lsl "command ls --color"
+alias ls lsd
+
 abbr -a cls clear
 
 set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null \

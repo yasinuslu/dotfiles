@@ -5,6 +5,7 @@ df_require() {
   source "${DF_SRC_PATH}/install_fzf.sh"
   source "${DF_SRC_PATH}/tmux/install.sh"
   source "${DF_SRC_PATH}/install_vim.sh"
+  source "${DF_SRC_PATH}/install_lsd.sh"
   source "${DF_SRC_PATH}/install_docker_tools.sh"
   source "${DF_SRC_PATH}/install_asdf.sh"
   source "${DF_SRC_PATH}/config.sh"
@@ -30,6 +31,9 @@ df_install() {
 
   echo "Installing vim"
   df_install_vim
+
+  echo "Installing lsd"
+  df_install_lsd
 
   echo "Installing docker tools"
   df_install_docker_tools
