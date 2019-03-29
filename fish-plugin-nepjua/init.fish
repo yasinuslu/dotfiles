@@ -26,6 +26,7 @@ set -x NODEJS_CHECK_SIGNATURES no
 
 set -x PATH (yarn global bin) $PATH
 set -x PATH $NEPJUA_PATH/../bin $PATH
+set -x PATH $HOME/.fzf/bin $PATH
 set -x TERM xterm-256color
 set -x BYOBU_BACKEND tmux
 
