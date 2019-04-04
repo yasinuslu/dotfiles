@@ -13,7 +13,7 @@ df_install_lsd() {
   local url
 
   installPath="${HOME}/.local/bin"
-  version=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+  version=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | jq '.tag_name' -r)
   filePath="lsd-${version}-x86_64-unknown-linux-gnu"
 
   if [[ $DF_PLATFORM == 'Mac' ]]; then
