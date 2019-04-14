@@ -10,6 +10,8 @@ df_config() {
   ## Pencil Dark
   ## Thayer Bright
   ## Xterm
-
-  dconf write /apps/guake/style/font/palette-name "'Argonaut'" 2> /dev/null
+  
+  if command -v dconf >/dev/null 2>&1; then
+    dconf write /apps/guake/style/font/palette-name "'Argonaut'" 2> /dev/null
+  fi
 }
