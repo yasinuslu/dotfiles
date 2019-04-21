@@ -4,5 +4,8 @@ if test -d $HOME/Android/Sdk
   set -x PATH $ANDROID_HOME/platform-tools $PATH
 end
 
-set -x PATH /snap/bin $PATH
+if test -d /snap/bin
+  set -x PATH /snap/bin $PATH
+end
+
 set -x LIBVIRT_DEFAULT_URI "qemu:///system"
