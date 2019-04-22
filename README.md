@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-git clone [https://github.com/yasinuslu/dotfiles.git](https://github.com/yasinuslu/dotfiles.git)
+git clone https://github.com/yasinuslu/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
