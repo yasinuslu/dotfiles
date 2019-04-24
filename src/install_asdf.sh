@@ -7,6 +7,20 @@ df_install_asdf_plugin_version() {
   asdf global ${plugin} ${version}
 }
 
+df_install_asdf_node_fix_npm() {
+  local curDir="${PWD}"
+
+  for ver in ~/.asdf/installs/nodejs/*/bin; do
+    cd $ver
+    if [ -f ../.npm/bin/npm ]; then
+      ln -nfs ../.npm/bin/npm npm
+      ln -nfs ../.npm/bin/npx npx
+    fi
+  done
+
+  cd "${curDir}"
+}
+
 df_install_asdf() {
   git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
 
@@ -17,7 +31,7 @@ df_install_asdf() {
 
   local bashrc=${DF_PROJECT_PATH}/.gen/bashrc
   echo '' > ${bashrc}
-  echo ". ${bashrc}" >> ${HOME}/.bashrc
+  grep -qxF ". ${bashrc}" "${HOME}"/.bashrc || echo ". ${bashrc}" >> "${HOME}"/.bashrc
 
   echo -e '\n. $HOME/.asdf/asdf.sh' >> ${bashrc}
   echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ${bashrc}
@@ -27,12 +41,13 @@ df_install_asdf() {
   df_install_asdf_plugin_version java openjdk-11
 
   export NODEJS_CHECK_SIGNATURES=no
-  df_install_asdf_plugin_version nodejs 10.14.1
-  if [ `id -u` -eq "0" ]; then
-    npm config set user 0;
-    npm config set unsafe-perm true;
+  df_install_asdf_plugin_version nodejs 10.15.3
+  if [ $(id -u) -eq "0" ]; then
+    npm config set user 0
+    npm config set unsafe-perm true
   fi
-  npm i -g yarn
+  npm install -g --silent yarn@latest npm@latest
+  df_install_asdf_node_fix_npm
   echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${bashrc}
 
   df_install_asdf_plugin_version golang 1.11.2
