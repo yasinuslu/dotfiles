@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DF_PROJECT_PATH=""
 DF_SRC_PATH=""
