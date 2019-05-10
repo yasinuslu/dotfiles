@@ -2,7 +2,6 @@ FROM ubuntu:18.04
 
 WORKDIR /root
 
-# No need to remove cache because even if we clean it dotfiles will pollute it again
 RUN apt-get -y update \
   && apt-get -y install \
     curl \
