@@ -24,16 +24,15 @@ df_install_asdf_node_fix_npm() {
 df_install_asdf_bashrc() {
   mkdir -p ${DF_PROJECT_PATH}/.gen
 
-  local bashrc=${DF_PROJECT_PATH}/.gen/bashrc
-  echo '' >${bashrc}
-  grep -qxF ". ${bashrc}" "${HOME}"/.bashrc || echo ". ${bashrc}" >>"${HOME}"/.bashrc
+  echo '' > ${DF_BASHRC_PATH}
+  grep -qxF ". ${DF_BASHRC_PATH}" "${HOME}"/.bashrc || echo ". ${DF_BASHRC_PATH}" >> "${HOME}"/.bashrc
 
-  echo -e '\n. ${HOME}/.asdf/asdf.sh' >>${bashrc}
-  echo -e '\n. ${HOME}/.asdf/completions/asdf.bash' >>${bashrc}
-  echo -e '\nexport GOPATH=${HOME}/go' >>${bashrc}
-  echo -e '\nexport PATH=${PATH}:${GOPATH}/bin:/snap/bin' >>${bashrc}
+  echo -e '\n. ${HOME}/.asdf/asdf.sh' >> ${DF_BASHRC_PATH}
+  echo -e '\n. ${HOME}/.asdf/completions/asdf.bash' >> ${DF_BASHRC_PATH}
+  echo -e '\nexport GOPATH=${HOME}/go' >> ${DF_BASHRC_PATH}
+  echo -e '\nexport PATH=${PATH}:${GOPATH}/bin:/snap/bin' >> ${DF_BASHRC_PATH}
 
-  source ${bashrc}
+  source ${DF_BASHRC_PATH}
 }
 
 df_install_asdf() {
@@ -54,7 +53,7 @@ df_install_asdf() {
   fi
   npm install -g --silent yarn@latest npm@latest
   df_install_asdf_node_fix_npm
-  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >>${bashrc}
+  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${DF_BASHRC_PATH}
 
   df_install_asdf_plugin_version golang 1.11.2
   mkdir -p ${HOME}/go/bin

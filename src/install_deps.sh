@@ -11,5 +11,5 @@ df_install_deps() {
   fi
 
   $pacapt --noconfirm -Syy
-  $pacapt --noconfirm -S tmux vim fish jq
+  $pacapt --noconfirm -S tmux vim fish jq git
 }

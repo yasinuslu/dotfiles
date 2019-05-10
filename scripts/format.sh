@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-shfmt -w -i 2 src/
+shfmt -sr -w -i 2 src/
