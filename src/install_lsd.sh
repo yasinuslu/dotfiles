@@ -22,10 +22,10 @@ df_install_lsd() {
 
   url="https://github.com/Peltoche/lsd/releases/download/${version}/${filePath}.tar.gz"
   curl -L "${url}" | tar -zx -C /tmp
-  
+
   cp "/tmp/${filePath}/lsd" ${installPath}
   cp "/tmp/${filePath}/autocomplete/lsd.fish" "${HOME}/.config/fish/completions/"
-  
+
   chmod 755 "${installPath}/lsd"
 
   rm -rf "/tmp/${filePath}"

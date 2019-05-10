@@ -6,11 +6,11 @@ df_get_platform() {
 
   unameOut="$(uname -s)"
   case "${unameOut}" in
-    Linux*) machine=Linux ;;
-    Darwin*) machine=Mac ;;
-    CYGWIN*) machine=Cygwin ;;
-    MINGW*) machine=MinGw ;;
-    *) machine="UNKNOWN:${unameOut}" ;;
+  Linux*) machine=Linux ;;
+  Darwin*) machine=Mac ;;
+  CYGWIN*) machine=Cygwin ;;
+  MINGW*) machine=MinGw ;;
+  *) machine="UNKNOWN:${unameOut}" ;;
   esac
 
   DF_PLATFORM="${machine}"
