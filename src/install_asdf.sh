@@ -21,22 +21,28 @@ df_install_asdf_node_fix_npm() {
   cd "${curDir}"
 }
 
-df_install_asdf() {
-  git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
-
-  mkdir -p ${HOME}/.config/fish/completions
-  cp ${HOME}/.asdf/completions/asdf.fish ${HOME}/.config/fish/completions
-
+df_install_asdf_bashrc() {
   mkdir -p ${DF_PROJECT_PATH}/.gen
 
   local bashrc=${DF_PROJECT_PATH}/.gen/bashrc
   echo '' > ${bashrc}
   grep -qxF ". ${bashrc}" "${HOME}"/.bashrc || echo ". ${bashrc}" >> "${HOME}"/.bashrc
 
-  echo -e '\n. $HOME/.asdf/asdf.sh' >> ${bashrc}
-  echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ${bashrc}
+  echo -e '\n. ${HOME}/.asdf/asdf.sh' >> ${bashrc}
+  echo -e '\n. ${HOME}/.asdf/completions/asdf.bash' >> ${bashrc}
+  echo -e '\nexport GOPATH=${HOME}/go' >> ${bashrc}
+  echo -e '\nexport PATH=${PATH}:${GOPATH}/bin:/snap/bin' >> ${bashrc}
 
   source ${bashrc}
+}
+
+df_install_asdf() {
+  git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
+
+  mkdir -p ${HOME}/.config/fish/completions
+  cp ${HOME}/.asdf/completions/asdf.fish ${HOME}/.config/fish/completions
+
+  df_install_asdf_bashrc
 
   df_install_asdf_plugin_version java openjdk-11
 
