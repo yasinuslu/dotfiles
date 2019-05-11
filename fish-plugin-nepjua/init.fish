@@ -24,8 +24,6 @@ set -x IS_WSL (grep Microsoft /proc/sys/kernel/osrelease 2>/dev/null \
 
 set -x NODEJS_CHECK_SIGNATURES no
 
-set -x PATH (yarn global bin) $PATH
-set -x PATH $NEPJUA_PATH/../bin $PATH
 set -x PATH $HOME/.fzf/bin $PATH
 set -x PATH $HOME/.local/bin $PATH
 
