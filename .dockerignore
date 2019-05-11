@@ -1,5 +1,8 @@
-test
+__tests__
 scripts
 docker-compose.yml
 Dockerfile
 .gen
+test-utils
+package.json
+yarn.lock
