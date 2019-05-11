@@ -6,3 +6,6 @@ Dockerfile
 test-utils
 package.json
 yarn.lock
+.git
+node_modules
+.vscode
