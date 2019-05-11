@@ -1,3 +1,5 @@
 .cache/
 .gen/
 .vscode/sftp.json
+node_modules
+*.log

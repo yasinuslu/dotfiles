@@ -1,0 +1,33 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yasinuslu/dotfiles",
+  "author": "Yasin Uslu <nepjua@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "docker-compose run --rm dotfiles fish -c 'yarn install; yarn test:docker'",
+    "test:watch": "docker-compose run --rm dotfiles fish -c 'yarn install; yarn test:docker:watch'",
+    "test:docker": "jest",
+    "test:docker:watch": "yarn test:docker --watchAll",
+    "lint": "eslint --ext .ts test/"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.8.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "execa": "^1.0.0"
+  }
+}

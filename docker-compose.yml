@@ -1,0 +1,13 @@
+version: '3.3'
+
+volumes:
+  node_modules:
+
+services:
+  dotfiles:
+    build: .
+    image: yasinuslu/dotfiles:latest
+    working_dir: /root/dotfiles
+    volumes:
+      - .:/root/dotfiles
+      - node_modules:/root/dotfiles/node_modules
