@@ -2,6 +2,14 @@
 
 ### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
 
+## Demo
+
+You can check out this dotfiles with docker:
+
+```sh
+docker run --rm -it yasinuslu/dotfiles
+```
+
 ## Installation
 
 ```sh
