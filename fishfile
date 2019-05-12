@@ -12,3 +12,4 @@ oh-my-fish/plugin-node-binpath
 oh-my-fish/plugin-osx
 oh-my-fish/theme-bobthefish
 jhillyerd/plugin-git
+evanlucas/fish-kubectl-completions
