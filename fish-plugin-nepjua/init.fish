@@ -48,6 +48,8 @@ end
 
 if type -q code
   set -x EDITOR "code --wait"
+else if type -q code-insiders
+  set -x EDITOR "code-insiders --wait"
 else if type -q subl
   set -x EDITOR "subl --wait"
 end
