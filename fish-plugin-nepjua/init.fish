@@ -54,6 +54,14 @@ else if type -q subl
   set -x EDITOR "subl --wait"
 end
 
-# if type -q microk8s.docker
-#   set -x DOCKER_HOST "unix:///var/snap/microk8s/current/docker.sock"
-# end
+if test -d $HOME/.cabal/bin
+  set -x PATH $HOME/.cabal/bin $PATH
+end
+
+if test -d $HOME/.ghcup/bin
+  set -x PATH $HOME/.ghcup/bin $PATH
+end
+
+if test -d $HOME/.nix-profile/
+  bass source $HOME/.nix-profile/etc/profile.d/nix.sh
+end
