@@ -1,5 +1,7 @@
 # Dotfiles
 
+![](assets/screenshot.png)
+
 ### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
 
 ## Demo
