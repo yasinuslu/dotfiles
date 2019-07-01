@@ -65,3 +65,7 @@ end
 if test -d $HOME/.nix-profile/
   bass source $HOME/.nix-profile/etc/profile.d/nix.sh
 end
+
+if type -q yarn
+  set -x PATH (yarn global bin) $PATH
+end
