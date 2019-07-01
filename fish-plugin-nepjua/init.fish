@@ -69,3 +69,7 @@ end
 if type -q yarn
   set -x PATH (yarn global bin) $PATH
 end
+
+if type -q react-native
+  abbr --add rn 'react-native'
+end
