@@ -20,7 +20,6 @@ abbr --add mk 'microk8s.kubectl'
 abbr --add md 'microk8s.docker'
 abbr --add sk 'skaffold'
 abbr --add df 'df -x"squashfs"'
-abbr --add c 'code'
 abbr --add ci 'code-insiders'
 
 # dmeteor --dname=app --dport=5000 create app
