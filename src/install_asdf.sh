@@ -43,7 +43,8 @@ df_install_asdf() {
 
   df_install_asdf_bashrc
 
-  df_install_asdf_plugin_version java openjdk-11
+  df_install_asdf_plugin_version java adopt-openjdk-11.0.3+7
+  echo -e '\nexport JAVA_HOME=$(asdf where java)' >> ${DF_BASHRC_PATH}
 
   export NODEJS_CHECK_SIGNATURES=no
   df_install_asdf_plugin_version nodejs 10.15.3

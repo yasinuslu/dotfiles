@@ -70,6 +70,10 @@ if type -q yarn
   set -x PATH (yarn global bin) $PATH
 end
 
+if type -q java
+  set -x JAVA_HOME (asdf where java)
+end
+
 if type -q react-native
   abbr --add rn 'react-native'
 end

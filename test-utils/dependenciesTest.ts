@@ -31,6 +31,11 @@ export function dependenciesTest(execaOptions: execa.Options) {
     expect(result.code).toEqual(0);
   });
 
+  it('java home should be set correctly', async () => {
+    const result = await execa(`echo $JAVA_HOME`, execaOptions);
+    expect(result.stdout).toBeTruthy();
+  });
+
   it('fzf should be available', async () => {
     const result = await execa(`fzf --version`, execaOptions);
     expect(result.code).toEqual(0);
