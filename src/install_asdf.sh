@@ -36,7 +36,7 @@ df_install_asdf_bashrc() {
 }
 
 df_install_asdf() {
-  git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
+  git clone --depth 1 https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
 
   mkdir -p ${HOME}/.config/fish/completions
   cp ${HOME}/.asdf/completions/asdf.fish ${HOME}/.config/fish/completions
