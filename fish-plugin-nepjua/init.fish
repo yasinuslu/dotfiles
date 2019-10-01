@@ -77,3 +77,11 @@ end
 if type -q react-native
   abbr --add rn 'react-native'
 end
+
+# TODO: install fd with dotfiles and remove if check
+if type -q fd
+  # use https://github.com/sharkdp/fd for fzf if available, respects .gitignore
+  set -x FZF_DEFAULT_COMMAND 'fd --type f'
+  # To apply the command to CTRL-T as well
+  set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+end
