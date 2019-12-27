@@ -3,3 +3,4 @@
 .vscode/sftp.json
 node_modules
 *.log
+coverage/
