@@ -1,5 +1,6 @@
 df_require() {
   source "${DF_SRC_PATH}/platform.sh"
+  source "${DF_SRC_PATH}/install_binaries.sh"
   source "${DF_SRC_PATH}/install_deps.sh"
   source "${DF_SRC_PATH}/install_fish.sh"
   source "${DF_SRC_PATH}/install_fzf.sh"
@@ -19,6 +20,9 @@ df_install() {
 
   echo "Installing Dependencies"
   df_install_deps
+
+  echo "Install binaries"
+  df_install_binaries
 
   echo "Installing fish"
   df_install_fish
