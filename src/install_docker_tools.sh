@@ -3,6 +3,6 @@ df_install_docker_tools() {
 
   binDir="${HOME}/.local/bin"
 
-  curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o "${binDir}/docker-compose"
+  curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m) -o "${binDir}/docker-compose"
   chmod +x "${binDir}/docker-compose"
 }
