@@ -55,4 +55,9 @@ export function dependenciesTest(execaOptions: execa.Options) {
     const result = await execa(`jq --version`, execaOptions);
     expect(result.code).toEqual(0);
   });
+
+  it('bat should be available', async () => {
+    const result = await execa(`bat --version`, execaOptions);
+    expect(result.code).toEqual(0);
+  });
 }

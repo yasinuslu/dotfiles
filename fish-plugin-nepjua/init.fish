@@ -6,7 +6,9 @@
 # * $dependencies  package dependencies
 #
 
-set fish_greeting ""
+function fish_greeting 
+end
+
 set -x NEPJUA_PATH $HOME/.config/fisher/local/$USER/fish-plugin-nepjua
 set -x EDITOR vim
 
@@ -16,6 +18,7 @@ source $NEPJUA_PATH/aliases/docker.fish
 
 alias lsl "command ls --color"
 alias ls lsd
+alias cat bat
 
 abbr -a cls clear
 
@@ -73,6 +76,14 @@ end
 
 if type -q java
   set -x JAVA_HOME (asdf where java)
+end
+
+if type -q flutter
+  set -x FLUTTER_ROOT (asdf where flutter)
+end
+
+if type -q starship
+  starship init fish | source
 end
 
 if type -q react-native
