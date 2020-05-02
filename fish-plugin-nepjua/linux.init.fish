@@ -4,7 +4,7 @@ end
 if test -d /opt/android-sdk
   set -x ANDROID_HOME /opt/android-sdk
 end
-if ! test -z $ANDROID_HOME
+if test -n $ANDROID_HOME
   set -x PATH $ANDROID_HOME/tools $PATH
   set -x PATH $ANDROID_HOME/platform-tools $PATH
 end
