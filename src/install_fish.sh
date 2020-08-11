@@ -7,7 +7,6 @@ df_fish_install_fisher() {
   #install fisher
   FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/master/fisher.fish
   curl -Lo ${HOME}/.config/fish/functions/fisher.fish --create-dirs $FISHER_URL
-  ln -sf ${DF_PROJECT_PATH}/fishfile ${HOME}/.config/fish/fishfile
 }
 
 df_fish_install_completions() {
@@ -17,7 +16,6 @@ df_fish_install_completions() {
 }
 
 df_fish_install_deps() {
-  fish -c "fisher"
   fish -c "fisher add ${DF_PROJECT_PATH}/fish-plugin-nepjua"
 }
 

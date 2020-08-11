@@ -1,0 +1,1 @@
+nepjua_common_init
