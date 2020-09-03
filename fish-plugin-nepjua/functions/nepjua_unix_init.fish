@@ -1,7 +1,7 @@
 function nepjua_unix_init
   if test -d $HOME/go
-    set -x GOPATH $HOME/go
-    set -x PATH $GOPATH/bin $PATH
+    set -xg GOPATH $HOME/go
+    set -xg PATH $GOPATH/bin $PATH
   end
 
   switch (uname)

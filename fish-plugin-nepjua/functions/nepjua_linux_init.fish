@@ -1,18 +1,18 @@
 function nepjua_linux_init
   if test -d $HOME/Android/Sdk
-    set -x ANDROID_HOME $HOME/Android/Sdk
+    set -xg ANDROID_HOME $HOME/Android/Sdk
   end
   if test -d /opt/android-sdk
-    set -x ANDROID_HOME /opt/android-sdk
+    set -xg ANDROID_HOME /opt/android-sdk
   end
   if test -n $ANDROID_HOME
-    set -x PATH $ANDROID_HOME/tools $PATH
-    set -x PATH $ANDROID_HOME/platform-tools $PATH
+    set -xg PATH $ANDROID_HOME/tools $PATH
+    set -xg PATH $ANDROID_HOME/platform-tools $PATH
   end
 
   if test -d /snap/bin
-    set -x PATH /snap/bin $PATH
+    set -xg PATH /snap/bin $PATH
   end
 
-  set -x LIBVIRT_DEFAULT_URI "qemu:///system"
+  set -xg LIBVIRT_DEFAULT_URI "qemu:///system"
 end
