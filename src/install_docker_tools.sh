@@ -1,8 +1,12 @@
 df_install_docker_tools() {
   local binDir
 
-  binDir="${HOME}/.local/bin"
-
-  curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m) -o "${binDir}/docker-compose"
-  chmod +x "${binDir}/docker-compose"
+  if [[ "${DF_PLATFORM}" -eq "Mac" ]]
+    brew install docker-compose
+  else
+    binDir="${HOME}/.local/bin"
+    version="1.26.2"
+    curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o "${binDir}/docker-compose"
+    chmod +x "${binDir}/docker-compose"
+  fi
 }
