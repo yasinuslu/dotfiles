@@ -4,6 +4,8 @@
 
 ### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
 
+> [NerdFonts](https://www.nerdfonts.com/) is required for the icon-fonts in ls to work.
+
 ## Demo
 
 You can check out this dotfiles with docker:
