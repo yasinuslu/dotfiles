@@ -1,9 +1,10 @@
 df_install_fzf() {
-  local fzf_path
+  local fzfPath
 
-  fzf_path=${HOME}/.fzf
-  rm -rf "${fzf_path}*"
+  fzfPath=${HOME}/.fzf
+  rm -rf "${fzfPath}"
+  rm -rf "${fzfPath}*"
 
-  git clone --depth 1 https://github.com/junegunn/fzf.git ${fzf_path}
-  ${fzf_path}/install --all
+  git clone --depth 1 https://github.com/junegunn/fzf.git ${fzfPath}
+  ${fzfPath}/install --all
 }

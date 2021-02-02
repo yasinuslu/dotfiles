@@ -5,7 +5,7 @@ df_fish_clean() {
 
 df_fish_install_fisher() {
   #install fisher
-  FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/master/fisher.fish
+  FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/3.3.2/fisher.fish
   curl -Lo ${HOME}/.config/fish/functions/fisher.fish --create-dirs $FISHER_URL
 }
 
