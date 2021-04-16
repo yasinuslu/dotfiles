@@ -15,4 +15,5 @@ function nepjua_linux_init
   end
 
   set -xg LIBVIRT_DEFAULT_URI "qemu:///system"
+  set -x VIRTUAL_ENV_DISABLE_PROMPT true
 end
