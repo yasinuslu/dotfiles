@@ -55,6 +55,7 @@ df_install_asdf() {
   fi
   npm install -g --silent yarn@latest npm@latest
   df_install_asdf_node_fix_npm
+  echo -e '\nexport PATH=$PATH:$(npm -g bin)' >> ${DF_BASHRC_PATH}
   echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${DF_BASHRC_PATH}
 
   df_install_asdf_plugin_version golang 1.16.3
