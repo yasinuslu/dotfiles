@@ -44,11 +44,11 @@ df_install_asdf() {
 
   df_install_asdf_bashrc
 
-  df_install_asdf_plugin_version java adopt-openjdk-11.0.7+10
+  df_install_asdf_plugin_version java adoptopenjdk-16.0.1+9
   echo -e '\nexport JAVA_HOME=$(asdf where java)' >> ${DF_BASHRC_PATH}
 
   export NODEJS_CHECK_SIGNATURES=no
-  df_install_asdf_plugin_version nodejs 15.12.0
+  df_install_asdf_plugin_version nodejs 16.0.0
   if [ $(id -u) -eq "0" ]; then
     npm config set user 0
     npm config set unsafe-perm true
@@ -57,7 +57,7 @@ df_install_asdf() {
   df_install_asdf_node_fix_npm
   echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${DF_BASHRC_PATH}
 
-  df_install_asdf_plugin_version golang 1.14.2
+  df_install_asdf_plugin_version golang 1.16.3
   mkdir -p ${HOME}/go/bin
   mkdir -p ${HOME}/go/src
 }
