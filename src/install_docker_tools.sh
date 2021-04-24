@@ -1,7 +1,7 @@
 df_install_docker_tools() {
   local binDir
 
-  if [[ "${DF_PLATFORM}" -eq "Mac" ]]; then
+  if [[ $DF_PLATFORM == 'Mac' ]]; then
     brew install docker-compose
   else
     binDir="${HOME}/.local/bin"
