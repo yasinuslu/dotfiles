@@ -3,7 +3,6 @@ barnybug/docker-fish-completion
 jethrokuan/fzf
 jorgebucaran/fishopts
 jorgebucaran/fish-menu
-oh-my-fish/plugin-gi
 oh-my-fish/plugin-node-binpath
 oh-my-fish/plugin-osx
 oh-my-fish/theme-bobthefish

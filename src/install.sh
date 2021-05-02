@@ -4,6 +4,7 @@ df_require() {
   source "${DF_SRC_PATH}/install_deps.sh"
   source "${DF_SRC_PATH}/install_fish.sh"
   source "${DF_SRC_PATH}/install_fzf.sh"
+  source "${DF_SRC_PATH}/install_git_extensions.sh"
   source "${DF_SRC_PATH}/tmux/install.sh"
   source "${DF_SRC_PATH}/install_vim.sh"
   source "${DF_SRC_PATH}/install_lsd.sh"
@@ -21,6 +22,9 @@ df_install() {
 
   echo "Installing Dependencies"
   df_install_deps
+
+  echo "Installing Git Extensions"
+  df_install_git_extensions
 
   echo "Install binaries"
   df_install_binaries
