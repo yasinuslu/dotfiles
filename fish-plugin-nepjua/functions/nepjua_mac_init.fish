@@ -6,6 +6,6 @@ function nepjua_mac_init
   end
 
   if test -d /opt/homebrew
-    set -xg PATH $PATH /opt/homebrew/bin/
+    set -xg PATH /opt/homebrew/bin/ $PATH
   end
 end
