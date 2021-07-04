@@ -5,6 +5,9 @@ df_install_tmux() {
 
   git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
   ln -sf $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
+  
+  # make sure it exists
+  touch $HOME/.tmux/.tmux.conf.local
   cp $HOME/.tmux/.tmux.conf.local $HOME/.tmux.conf.local
 
   ln -sf ${DF_SRC_PATH}/tmux/tmux.conf ${HOME}/.tmux.nepjua.conf
