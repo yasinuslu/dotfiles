@@ -11,8 +11,26 @@ df_init_paths() {
   DF_BASHRC_PATH="${DF_PROJECT_PATH}/.gen/bashrc"
 }
 
-df_init_paths
+df_init() {
+  df_init_paths
 
-source "${DF_SRC_PATH}/install.sh"
-df_require
-df_install
+  source "${DF_SRC_PATH}/require.sh"
+  df_require
+}
+
+df_task() {
+  case $1 in
+  install)
+    df_install
+  ;;
+  apply-nepjua-config)
+    df_install_nepjua_config
+  ;;
+  *)
+    echo "command not found"
+  ;;
+  esac
+}
+
+df_init
+df_task "$@"
