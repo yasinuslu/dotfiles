@@ -19,8 +19,18 @@ docker run --rm -it yasinuslu/dotfiles
 ```sh
 git clone https://github.com/yasinuslu/dotfiles.git
 cd dotfiles
-./install.sh
+./df.sh install
 ```
+
+Then if you want to apply one of the user profiles:
+
+```sh
+./df.sh apply-nepjua-config
+```
+
+Available profiles:
+
+- nepjua => apply-nepjua-config
 
 ## Usage
 
