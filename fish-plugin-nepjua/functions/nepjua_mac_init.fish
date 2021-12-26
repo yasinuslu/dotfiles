@@ -8,4 +8,6 @@ function nepjua_mac_init
   if test -d /opt/homebrew
     set -xg PATH /opt/homebrew/bin/ $PATH
   end
+
+  set -xg DOCKER_DEFAULT_PLATFORM linux/amd64
 end
