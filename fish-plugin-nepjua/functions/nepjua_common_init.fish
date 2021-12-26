@@ -54,6 +54,10 @@ function nepjua_common_init
     set -xg GPG_TTY (tty)
   end
 
+  if test -d $HOME/.cargo/bin
+    set -xg PATH $HOME/.cargo/bin $PATH
+  end
+
   if test -d $HOME/.cabal/bin
     set -xg PATH $HOME/.cabal/bin $PATH
   end
