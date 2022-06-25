@@ -11,6 +11,7 @@ function nepjua_common_init
   alias lsl "command ls --color"
   alias ls lsd
   alias cat bat
+  alias pcat "bat --plain"
 
   abbr -a cls clear
 
