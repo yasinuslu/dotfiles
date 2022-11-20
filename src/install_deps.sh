@@ -7,9 +7,9 @@ df_install_deps() {
   chmod 755 $pacapt
 
   if [[ $DF_PLATFORM != 'Mac' ]]; then
-    pacapt="sudo ${pacapt}"
+    pacapt="sudo ${pacapt} --noconfirm"
   fi
 
-  $pacapt --noconfirm -Syy
-  $pacapt --noconfirm -S tmux vim fish jq git
+  $pacapt -Syy
+  $pacapt -S tmux vim fish jq git
 }

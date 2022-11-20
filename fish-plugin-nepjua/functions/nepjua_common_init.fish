@@ -95,6 +95,10 @@ function nepjua_common_init
     abbr --add rn 'react-native'
   end
 
+  if test -d $PWD/vendor/bin
+    set -xg PATH $PWD/vendor/bin $PATH
+  end
+
   # TODO: install fd with dotfiles and remove if check
   if type -q fd
     # use https://github.com/sharkdp/fd for fzf if available, respects .gitignore
