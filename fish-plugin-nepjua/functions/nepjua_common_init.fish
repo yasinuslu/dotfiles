@@ -103,4 +103,7 @@ function nepjua_common_init
     set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
   end
 
+  set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+  set -gx PATH "$PNPM_HOME" $PATH
+
 end
