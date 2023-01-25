@@ -12,6 +12,7 @@ function nepjua_common_init
   alias ls lsd
   alias cat bat
   alias pcat "bat --plain"
+  alias gcd "cd (git rev-parse --show-toplevel)"
 
   abbr -a cls clear
 
