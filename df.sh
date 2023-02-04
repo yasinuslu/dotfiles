@@ -26,6 +26,10 @@ df_task() {
   apply-nepjua-config)
     df_install_nepjua_config
   ;;
+  dev-test-command)
+    # put whatever command you wanna test quickly here
+    df_install_deps
+  ;;
   *)
     echo "command not found"
   ;;
