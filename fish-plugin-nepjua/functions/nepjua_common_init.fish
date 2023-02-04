@@ -12,7 +12,9 @@ function nepjua_common_init
   alias ls lsd
   alias cat bat
   alias pcat "bat --plain"
-  alias gcd "cd (git rev-parse --show-toplevel)"
+  
+  abbr -a gcd cd (git rev-parse --show-toplevel)
+  abbr -a gcom git checkout (git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 
   abbr -a cls clear
 
