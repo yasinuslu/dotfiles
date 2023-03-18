@@ -73,6 +73,10 @@ function nepjua_common_init
   if test -d $HOME/.nix-profile/
     bass source $HOME/.nix-profile/etc/profile.d/nix.sh
   end
+  
+  if test -d $HOME/.config/op/plugins.sh
+    source $HOME/.config/op/plugins.sh
+  end
 
   if type -q npm
     set -xg PATH (npm -g bin) $PATH
