@@ -1,7 +1,8 @@
+#!/bin/bash
+
 df_install_nepjua_config_clean() {
   rm -f ~/.config/starship.toml
 }
-
 
 df_install_nepjua_config() {
   df_install_nepjua_config_clean
