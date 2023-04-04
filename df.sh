@@ -28,7 +28,7 @@ df_task() {
   ;;
   dev-test-command)
     # put whatever command you wanna test quickly here
-    df_install_deps
+    df_install_kill_ports
   ;;
   *)
     echo "command not found"
