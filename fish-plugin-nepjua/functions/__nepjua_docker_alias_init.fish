@@ -1,4 +1,4 @@
-function nepjua_docker_alias_init
+function __nepjua_docker_alias_init
     alias dcomposer='docker run --rm -it --tty -v $PWD:/app composer'
     alias dartisan='docker run --rm -it --tty -v $PWD:/app -w /app php:7-cli-alpine php artisan'
     function dartisan-serve

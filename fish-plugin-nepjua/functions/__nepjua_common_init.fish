@@ -1,12 +1,9 @@
-function nepjua_common_init
-  function fish_greeting 
-  end
-
+function __nepjua_common_init
   set -xg EDITOR vim
 
   source $HOME/.asdf/asdf.fish
 
-  nepjua_docker_alias_init
+  __nepjua_docker_alias_init
 
   alias lsl "command ls --color"
   alias ls lsd
@@ -39,10 +36,10 @@ function nepjua_common_init
 
   if [ "$IS_WSL" != "0" ]
     # if we're in WSL
-    nepjua_wsl_init
+    __nepjua_wsl_init
   else
     # we're in a non-wsl unix environment
-    nepjua_unix_init
+    __nepjua_unix_init
   end
 
 

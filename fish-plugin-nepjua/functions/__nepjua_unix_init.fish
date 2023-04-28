@@ -1,4 +1,4 @@
-function nepjua_unix_init
+function __nepjua_unix_init
   if test -d $HOME/go
     set -xg GOPATH $HOME/go
     set -xg PATH $GOPATH/bin $PATH
@@ -6,9 +6,9 @@ function nepjua_unix_init
 
   switch (uname)
     case Linux
-      nepjua_linux_init
+      __nepjua_linux_init
     case Darwin
-      nepjua_mac_init
+      __nepjua_mac_init
     case FreeBSD NetBSD DragonFly
     case '*'
   end
