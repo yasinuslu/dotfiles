@@ -28,7 +28,7 @@ df_task() {
   ;;
   dev-test-command)
     # put whatever command you wanna test quickly here
-    df_install_fish
+    df_install_asdf
   ;;
   *)
     echo "command not found"

@@ -23,29 +23,31 @@ df_install_asdf_node_fix_npm() {
 }
 
 df_install_asdf_bashrc() {
-  mkdir -p ${DF_PROJECT_PATH}/.gen
+  mkdir -p "${DF_PROJECT_PATH}"/.gen
 
-  echo '' > ${DF_BASHRC_PATH}
-  grep -qxF ". ${DF_BASHRC_PATH}" "${HOME}"/.bashrc || echo ". ${DF_BASHRC_PATH}" >> "${HOME}"/.bashrc
+  echo '' > "${DF_BASHRC_PATH}"
+  grep -qxF ". "${DF_BASHRC_PATH}"" "${HOME}"/.bashrc || echo ". "${DF_BASHRC_PATH}"" >> "${HOME}"/.bashrc
 
-  echo -e '\n. ${HOME}/.asdf/asdf.sh' >> ${DF_BASHRC_PATH}
-  echo -e '\n. ${HOME}/.asdf/completions/asdf.bash' >> ${DF_BASHRC_PATH}
-  echo -e '\nexport GOPATH=${HOME}/go' >> ${DF_BASHRC_PATH}
-  echo -e '\nexport PATH=${PATH}:${GOPATH}/bin:/snap/bin' >> ${DF_BASHRC_PATH}
+  echo -e '\n. ${HOME}/.asdf/asdf.sh' >> "${DF_BASHRC_PATH}"
+  echo -e '\n. ${HOME}/.asdf/completions/asdf.bash' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport GOPATH=${HOME}/go' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport PATH=${PATH}:${GOPATH}/bin:/snap/bin' >> "${DF_BASHRC_PATH}"
 
-  source ${DF_BASHRC_PATH}
+  source "${DF_BASHRC_PATH}"
 }
 
 df_install_asdf() {
-  git clone --depth 1 https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
+  rm -rf "${HOME}"/.asdf
 
-  mkdir -p ${HOME}/.config/fish/completions
-  cp ${HOME}/.asdf/completions/asdf.fish ${HOME}/.config/fish/completions
+  git clone --depth 1 https://github.com/asdf-vm/asdf.git "${HOME}"/.asdf
+
+  mkdir -p "${HOME}"/.config/fish/completions
+  cp "${HOME}"/.asdf/completions/asdf.fish "${HOME}"/.config/fish/completions
 
   df_install_asdf_bashrc
 
   df_install_asdf_plugin_version java latest:adoptopenjdk-17
-  echo -e '\nexport JAVA_HOME=$(asdf where java)' >> ${DF_BASHRC_PATH}
+  echo -e '\nexport JAVA_HOME=$(asdf where java)' >> "${DF_BASHRC_PATH}"
 
   export NODEJS_CHECK_SIGNATURES=no
   df_install_asdf_plugin_version nodejs lts
@@ -53,12 +55,13 @@ df_install_asdf() {
     npm config set user 0
     npm config set unsafe-perm true
   fi
-  npm install -g --silent yarn@latest npm@latest
+  npm install -g --silent yarn@latest npm@latest pnpm@latest
   df_install_asdf_node_fix_npm
-  echo -e '\nexport PATH=$PATH:$(npm -g bin)' >> ${DF_BASHRC_PATH}
-  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${DF_BASHRC_PATH}
+  echo -e '\nexport PATH="$PATH":"$(npm prefix -g)/bin"' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport PATH=$PATH:$(pnpm bin)' >> "${DF_BASHRC_PATH}"
 
   df_install_asdf_plugin_version golang latest
-  mkdir -p ${HOME}/go/bin
-  mkdir -p ${HOME}/go/src
+  mkdir -p "${HOME}"/go/bin
+  mkdir -p "${HOME}"/go/src
 }
