@@ -23,10 +23,10 @@ df_install_asdf_node_fix_npm() {
 }
 
 df_install_asdf_bashrc() {
-  mkdir -p ${DF_PROJECT_PATH}/.gen
+  mkdir -p "${DF_PROJECT_PATH}"/.gen
 
-  echo '' > ${DF_BASHRC_PATH}
-  grep -qxF ". ${DF_BASHRC_PATH}" "${HOME}"/.bashrc || echo ". ${DF_BASHRC_PATH}" >> "${HOME}"/.bashrc
+  echo '' > "${DF_BASHRC_PATH}"
+  grep -qxF ". "${DF_BASHRC_PATH}"" "${HOME}"/.bashrc || echo ". "${DF_BASHRC_PATH}"" >> "${HOME}"/.bashrc
 
   # We want this to output variable names without expanding
   # shellcheck disable=SC2016
@@ -42,6 +42,8 @@ df_install_asdf_bashrc() {
 }
 
 df_install_asdf() {
+  rm -rf "${HOME}"/.asdf
+
   git clone --depth 1 https://github.com/asdf-vm/asdf.git "${HOME}"/.asdf
 
   mkdir -p "${HOME}"/.config/fish/completions
@@ -58,12 +60,13 @@ df_install_asdf() {
     npm config set user 0
     npm config set unsafe-perm true
   fi
-  npm install -g --silent yarn@latest npm@latest
+  npm install -g --silent yarn@latest npm@latest pnpm@latest
   df_install_asdf_node_fix_npm
-  echo -e '\nexport PATH=$PATH:$(npm -g bin)' >> ${DF_BASHRC_PATH}
-  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> ${DF_BASHRC_PATH}
+  echo -e '\nexport PATH="$PATH":"$(npm prefix -g)/bin"' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport PATH=$PATH:$(yarn global bin)' >> "${DF_BASHRC_PATH}"
+  echo -e '\nexport PATH=$PATH:$(pnpm bin)' >> "${DF_BASHRC_PATH}"
 
   df_install_asdf_plugin_version golang latest
-  mkdir -p ${HOME}/go/bin
-  mkdir -p ${HOME}/go/src
+  mkdir -p "${HOME}"/go/bin
+  mkdir -p "${HOME}"/go/src
 }

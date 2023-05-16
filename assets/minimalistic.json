@@ -1,0 +1,112 @@
+[
+  {
+    "type": "escape",
+    "width": 80,
+    "align": "left",
+    "title":"Esc   ",
+    "image": {
+      "filePath": "~/Pictures/mtmr/esc.png"
+    }
+  },
+  {
+    "type": "shellScriptTitledButton",
+    "source": {
+      "inline": "echo  ' ⌜ukieTux⌟'"
+    },
+    "align": "left",
+    "image": {
+      "filePath": "~/Pictures/mtmr/profile.png"
+    },
+    "bordered": false
+  },
+  {
+    "type": "battery",
+    "align": "left",
+    "bordered": false,
+    "image": {
+      "filePath": "~/Pictures/mtmr/battery.png"
+    }
+  },
+  {
+    "type": "shellScriptTitledButton",
+    "source": {
+      "inline": "bash ~/Pictures/mtmr/trackpad_battery.sh"
+    },
+    "refreshInterval": 2,
+    "align": "left",
+    "bordered": false,
+    "image": {
+      "filePath": "~/Pictures/mtmr/trackpad.png"
+    }
+  },
+  {
+    "type": "shellScriptTitledButton",
+    "width": 80,
+    "refreshInterval": 2,
+    "source": {
+      "inline": "top -l 2 -n 0 -F | egrep -o ' \\d*\\.\\d+% idle' | tail -1 | awk -F% '{p = 100 - $1; if (p > 30) c = \"\\033[33m\"; if (p > 70) c = \"\\033[30;43m\"; printf \"%s%4.1f%%\\n\", c, p}'"
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "activate application \"Activity Monitor\"\rtell application \"System Events\"\r\ttell process \"Activity Monitor\"\r\t\ttell radio button \"CPU\" of radio group 1 of group 2 of toolbar 1 of window 1 to perform action \"AXPress\"\r\tend tell\rend tell"
+    },
+    "align": "left",
+    "image": {
+      "filePath": "~/Pictures/mtmr/cpu.png"
+    },
+    "bordered": false
+  },
+  {
+    "type": "appleScriptTitledButton",
+    "source": {
+      "inline": "set mem to do shell script \"ps -A -o %mem | awk '{s+=$1}END{print s}'\"\rreturn mem & \"%\""
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "activate application \"Activity Monitor\"\rtell application \"System Events\"\r\ttell process \"Activity Monitor\"\r\t\ttell radio button \"CPU\" of radio group 1 of group 2 of toolbar 1 of window 1 to perform action \"AXPress\"\r\tend tell\rend tell"
+    },
+    "refreshInterval": 2,
+    "align": "left",
+    "image": {
+      "filePath": "~/Pictures/mtmr/ram.png"
+    }
+  },
+  {
+    "type": "shellScriptTitledButton",
+    "source": {
+      "inline": "bash ~/Pictures/mtmr/free_space.sh"
+    },
+    "refreshInterval": 2,
+    "align": "left",
+    "bordered": false,
+    "image": {
+      "filePath": "~/Pictures/mtmr/computer.png"
+    }
+  },
+  {
+    "type": "weather",
+    "align": "right",
+    "icon_type": "text",
+    "api_key": "ca93a0bb8cdb428552660d83249e4bc9",
+    "bordered": false
+  },
+  {
+    "type": "timeButton",
+    "formatTemplate": "⌜dd MMM ✖︎ HH:mm⌟",
+    "align": "right",
+    "bordered": false,
+    "image": {
+      "filePath": "~/Pictures/mtmr/clock.png"
+    }
+  },
+  {
+    "type": "sleep",
+    "width": 40,
+    "align": "right",
+    "bordered": true,
+    "title": "",
+    "image": {
+      "filePath": "~/Pictures/mtmr/sleep.png"
+    }
+  }
+]

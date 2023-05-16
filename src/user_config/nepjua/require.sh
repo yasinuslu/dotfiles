@@ -1,8 +1,9 @@
+#!/bin/bash
+
 df_install_nepjua_config_clean() {
   rm -f "${HOME}"/.config/starship.toml
   rm -f "${HOME}"/winhome
 }
-
 
 df_install_nepjua_config() {
   df_install_nepjua_config_clean
