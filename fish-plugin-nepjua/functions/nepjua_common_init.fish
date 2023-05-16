@@ -37,7 +37,10 @@ function nepjua_common_init
     set -xg KUBECONFIG (echo $HOME/.kube/config* | sed -e "s/\ /:/g")
   end
 
-  if [ "$IS_WSL" != "0" ]
+  $HOME/.local/bin/wsl-ssh-agent-relay start
+  set -xg SSH_AUTH_SOCK $HOME/.ssh/wsl-ssh-agent.sock
+
+  if [ "$IS_WSL" = "0" ]
     # if we're in WSL
     nepjua_wsl_init
   else
