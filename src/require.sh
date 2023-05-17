@@ -1,5 +1,9 @@
 df_require() {
+  # @source src/require.sh
+  # shellcheck source=src/require.sh
+
   source "${DF_SRC_PATH}/platform.sh"
+  source "${DF_SRC_PATH}/install_bashrc.sh"
   source "${DF_SRC_PATH}/install_binaries.sh"
   source "${DF_SRC_PATH}/install_deps.sh"
   source "${DF_SRC_PATH}/install_fish.sh"

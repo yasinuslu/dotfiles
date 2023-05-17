@@ -6,7 +6,7 @@ function __nepjua_mac_init
   end
 
   if test -d /opt/homebrew
-    set -xg PATH /opt/homebrew/bin/ $PATH
+    fish_add_path /opt/homebrew/bin
   end
 
   set -xg DOCKER_DEFAULT_PLATFORM linux/amd64

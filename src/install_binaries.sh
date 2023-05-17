@@ -45,14 +45,17 @@ EOF
   echo "kill-ports installed to ${binDir}"
 }
 
-df_install_binaries() {
-  df_install_binary "diff-so-fancy" "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
+df_install_wsl_ssh_agent_relay() {
   df_install_binary "wsl-ssh-agent-relay" "https://raw.githubusercontent.com/rupor-github/wsl-ssh-agent/master/docs/wsl-ssh-agent-relay"
 
-  # We want this to output variable names without expanding
-  # shellcheck disable=SC2016
-  {
-    echo -e '${HOME}/.local/bin/wsl-ssh-agent-relay start'
-    echo -e 'export SSH_AUTH_SOCK=${HOME}/.ssh/wsl-ssh-agent.sock'
-  } >> "${DF_BASHRC_PATH}"
+  df_install_bashrc_append '${HOME}/.local/bin/wsl-ssh-agent-relay start'
+  df_install_bashrc_append 'export SSH_AUTH_SOCK=${HOME}/.ssh/wsl-ssh-agent.sock'
+}
+
+df_install_binaries() {
+  df_install_binary "diff-so-fancy" "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
+
+  if [ "${DF_PLATFORM}" == "WSL" ]; then
+    df_install_wsl_ssh_agent_relay
+  fi
 }

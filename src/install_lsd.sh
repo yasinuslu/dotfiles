@@ -1,16 +1,11 @@
-df_clean_lsd() {
-  rm -rf ${HOME}/.config/fish/completions/lsd.fish
-  rm -rf ${HOME}/.local/bin/lsd
-}
-
-df_install_lsd() {
-
-  df_clean_lsd
-
+df_install_lsd_with_binary() {
   local installPath
   local filePath
   local version
   local url
+
+  rm -rf ${HOME}/.config/fish/completions/lsd.fish
+  rm -rf ${HOME}/.local/bin/lsd
 
   installPath="${HOME}/.local/bin"
   version=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | jq '.tag_name' -r)
@@ -29,4 +24,12 @@ df_install_lsd() {
   chmod 755 "${installPath}/lsd"
 
   rm -rf "/tmp/${filePath}"
+}
+
+df_install_lsd() {
+  if [[ $DF_PLATFORM == 'Mac' ]]; then
+    df_install_deps_cmd lsd
+  else
+    df_install_lsd_with_binary
+  fi
 }

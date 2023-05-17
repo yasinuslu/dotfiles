@@ -3,6 +3,10 @@ df_install() {
 
   echo "Installing for ${DF_PLATFORM}"
 
+  echo "Installing Bashrc"
+  df_install_bashrc_clean
+  df_install_bashrc
+
   echo "Installing Dependencies"
   df_install_deps
 

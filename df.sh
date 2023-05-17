@@ -16,6 +16,7 @@ df_init() {
 
   source "${DF_SRC_PATH}/require.sh"
   df_require
+  df_get_platform
 }
 
 df_task() {
@@ -27,8 +28,9 @@ df_task() {
     df_install_nepjua_config
   ;;
   dev-test-command)
-    # put whatever command you wanna test quickly here
-    df_install_binaries
+    # echo $DF_PLATFORM
+    df_install_bashrc
+    df_install_asdf
   ;;
   *)
     echo "command not found"
