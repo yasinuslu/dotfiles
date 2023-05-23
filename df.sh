@@ -28,9 +28,7 @@ df_task() {
     df_install_nepjua_config
   ;;
   dev-test-command)
-    # echo $DF_PLATFORM
-    df_install_bashrc
-    df_install_asdf
+    df_install_fish
   ;;
   *)
     echo "command not found"
