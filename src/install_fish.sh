@@ -29,9 +29,6 @@ EOF
 }
 
 df_install_fish() {
-  local original_shell_binary
-  original_shell_binary=$(readlink $(which fish))
-
   nix profile install nixpkgs#fish
 
   ln -s ${DF_PROJECT_PATH}/ ${HOME}/.config/fish
