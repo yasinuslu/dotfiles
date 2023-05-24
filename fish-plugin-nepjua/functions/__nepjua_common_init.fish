@@ -53,6 +53,10 @@ function __nepjua_common_init
     set -xg GPG_TTY (tty)
   end
 
+  if type -q yay
+    alias yay "yay --color=always --noconfirm"
+  end
+
   if test -d $HOME/.cargo/bin
     fish_add_path $HOME/.cargo/bin
   end

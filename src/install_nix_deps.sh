@@ -14,8 +14,6 @@ df_install_nix_deps() {
   nix profile install --impure \
     nixpkgs#jq \
     nixpkgs#git \
-    nixpkgs#docker \
-    nixpkgs#docker-compose \
     nixpkgs#lsd \
     nixpkgs#bat \
     nixpkgs#fzf \
