@@ -1,8 +1,6 @@
 function __nepjua_common_init
   set -xg EDITOR vim
 
-  source $HOME/.asdf/asdf.fish
-
   __nepjua_docker_alias_init
 
   alias lsl "command ls --color"
@@ -20,8 +18,8 @@ function __nepjua_common_init
 
   set -xg NODEJS_CHECK_SIGNATURES no
 
-  set -xg PATH $HOME/.fzf/bin $PATH
-  set -xg PATH $HOME/.local/bin $PATH
+  fish_add_path $HOME/.fzf/bin
+  fish_add_path $HOME/.local/bin
 
   set -xg TERM xterm-256color
   set -xg BYOBU_BACKEND tmux
@@ -60,20 +58,24 @@ function __nepjua_common_init
     set -xg GPG_TTY (tty)
   end
 
+  if type -q yay
+    alias yay "yay --color=always --noconfirm"
+  end
+
   if test -d $HOME/.cargo/bin
-    set -xg PATH $HOME/.cargo/bin $PATH
+    fish_add_path $HOME/.cargo/bin
   end
 
   if test -d $HOME/.cabal/bin
-    set -xg PATH $HOME/.cabal/bin $PATH
+    fish_add_path $HOME/.cabal/bin
   end
 
   if test -d $HOME/.ghcup/bin
-    set -xg PATH $HOME/.ghcup/bin $PATH
+    fish_add_path $HOME/.ghcup/bin
   end
 
   if test -d $HOME/.nix-profile/
-    bass source $HOME/.nix-profile/etc/profile.d/nix.sh
+    bass source $HOME/.nix-profile/etc/profile.d/*.sh
   end
 
   if test -d $HOME/.config/op/plugins.sh
@@ -81,11 +83,11 @@ function __nepjua_common_init
   end
 
   if type -q npm
-    set -xg PATH (npm -g bin) $PATH
+    fish_add_path (npm -g bin)
   end
 
   if type -q yarn
-    set -xg PATH (yarn global bin) $PATH
+    fish_add_path (yarn global bin)
   end
 
   if type -q java
@@ -105,7 +107,7 @@ function __nepjua_common_init
   end
 
   if test -d $PWD/vendor/bin
-    set -xg PATH $PWD/vendor/bin $PATH
+    fish_add_path $PWD/vendor/bin
   end
 
   # TODO: install fd with dotfiles and remove if check
