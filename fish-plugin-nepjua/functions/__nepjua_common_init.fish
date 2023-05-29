@@ -9,7 +9,7 @@ function __nepjua_common_init
   alias ls lsd
   alias cat bat
   alias pcat "bat --plain"
-  
+
   abbr -a gcd "cd (git rev-parse --show-toplevel)"
   abbr -a gcom "git checkout (git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
 
@@ -32,6 +32,11 @@ function __nepjua_common_init
 
   if test -d $HOME/.kube
     set -xg KUBECONFIG (echo $HOME/.kube/config* | sed -e "s/\ /:/g")
+  end
+
+  if type -q podman
+    alias docker podman
+    alias docker-compose podman-compose
   end
 
   if [ "$IS_WSL" = "0" ]
@@ -70,7 +75,7 @@ function __nepjua_common_init
   if test -d $HOME/.nix-profile/
     bass source $HOME/.nix-profile/etc/profile.d/nix.sh
   end
-  
+
   if test -d $HOME/.config/op/plugins.sh
     source $HOME/.config/op/plugins.sh
   end
