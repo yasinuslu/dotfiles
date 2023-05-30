@@ -22,6 +22,9 @@ df_init() {
 df_task() {
   case $1 in
   install)
+    ln -sf "${DF_PROJECT_PATH}/home.nix" "${HOME}/.config/nixpkgs/home.nix"
+    sudo nixos-rebuild switch
+    home-manager switch
     df_install
   ;;
   apply-nepjua-config)

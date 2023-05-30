@@ -74,10 +74,6 @@ function __nepjua_common_init
     fish_add_path $HOME/.ghcup/bin
   end
 
-  if test -d $HOME/.nix-profile/
-    bass source $HOME/.nix-profile/etc/profile.d/*.sh
-  end
-
   if test -d $HOME/.config/op/plugins.sh
     source $HOME/.config/op/plugins.sh
   end
@@ -88,14 +84,6 @@ function __nepjua_common_init
 
   if type -q yarn
     fish_add_path (yarn global bin)
-  end
-
-  if type -q java
-    set -xg JAVA_HOME (asdf where java)
-  end
-
-  if type -q flutter
-    set -xg FLUTTER_ROOT (asdf where flutter)
   end
 
   if type -q starship

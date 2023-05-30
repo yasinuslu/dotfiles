@@ -1,6 +1,4 @@
 df_install_tmux() {
-  nix profile install nixpkgs#tmux
-
   rm -rf ${HOME}/.tmux
   rm -rf ${HOME}/.tmux.conf
   rm -rf ${HOME}/.tmux.bak

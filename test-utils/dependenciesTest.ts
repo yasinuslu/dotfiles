@@ -1,11 +1,6 @@
 import execa from 'execa';
 
 export function dependenciesTest(execaOptions: execa.Options) {
-  it('asdf should be available', async () => {
-    const result = await execa(`asdf --version`, execaOptions);
-    expect(result.code).toEqual(0);
-  });
-
   it('node should be available', async () => {
     const result = await execa(`node --version`, execaOptions);
     expect(result.code).toEqual(0);

@@ -68,4 +68,3 @@ Also would be helpful to see [this post](https://medium.com/@bramblexu/enable-tm
 - [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf)
 - [https://github.com/SpaceVim/SpaceVim](https://github.com/SpaceVim/SpaceVim)
 - [https://github.com/icy/pacapt](https://github.com/icy/pacapt)
-- [https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf)

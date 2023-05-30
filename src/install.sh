@@ -24,7 +24,4 @@ df_install() {
 
   echo "Installing vim"
   df_install_vim
-
-  echo "Installing asdf (as in sdk manager)"
-  df_install_asdf
 }

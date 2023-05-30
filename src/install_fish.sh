@@ -29,8 +29,6 @@ EOF
 }
 
 df_install_fish() {
-  nix profile install nixpkgs#fish
-
   ln -s ${DF_PROJECT_PATH}/ ${HOME}/.config/fish
 
   if [[ -f ${DF_PROJECT_PATH}/fish-plugin-nepjua/config.sh ]]; then

@@ -10,7 +10,6 @@ df_require() {
   source "${DF_SRC_PATH}/install_git_extensions.sh"
   source "${DF_SRC_PATH}/tmux/install.sh"
   source "${DF_SRC_PATH}/install_vim.sh"
-  source "${DF_SRC_PATH}/install_asdf.sh"
   source "${DF_SRC_PATH}/install.sh"
   source "${DF_SRC_PATH}/user_config/nepjua/require.sh"
 }
