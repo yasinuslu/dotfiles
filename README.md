@@ -1,5 +1,8 @@
 # Dotfiles
 
+## DEPRECATED
+This project is deprecated in favor of [nix-config](https://github.com/yasinuslu/nix-config)
+
 ![](assets/screenshot.png)
 
 ### Backup all your current dotfiles, this dotfiles will delete them without any warnings.
